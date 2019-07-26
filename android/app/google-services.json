@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "901556112572",
+    "firebase_url": "https://biccatecaarmarios.firebaseio.com",
+    "project_id": "biccatecaarmarios",
+    "storage_bucket": "biccatecaarmarios.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:901556112572:android:1150952f18c10dda",
+        "android_client_info": {
+          "package_name": "br.com.jackson.armarios_inteligentes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "901556112572-k09r4ot4m6igikobmhv0261i0eqkqf8s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBf2OtLrucNQot5jxM-bufHzBKtAardxS0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "901556112572-k09r4ot4m6igikobmhv0261i0eqkqf8s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
