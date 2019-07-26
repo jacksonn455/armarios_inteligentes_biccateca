@@ -3,7 +3,7 @@ Armários Inteligentes
 
 --------------------
 
-Aplicativo em desenvolvimento para utilizar armários inteligentes, utilizando autenticação de login e senha com banco de dados firebase .
+Aplicativo em desenvolvimento para utilizar armários inteligentes
 
  --------------------
  
