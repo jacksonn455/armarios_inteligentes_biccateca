@@ -3,7 +3,7 @@ Armários Inteligentes
 
 --------------------
 
-O sistema foi desenvolvido para aprendrer a linguagem de programação Dart com o framework Flutter, utilizando autenticação de login e senha com banco de dados firebase .
+Aplicativo em desenvolvimento para utilizar armários inteligentes, utilizando autenticação de login e senha com banco de dados firebase .
 
  --------------------
  
