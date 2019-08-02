@@ -39,6 +39,7 @@ dependencies:
   path_provider: 0.4.1
   simple_permissions: ^0.1.2
   barcode_scan: ^0.0.4
+  native_device_orientation : ^ 0.1.0
 
 
 
@@ -46,6 +47,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
 
 
 # For information on the generic Dart part of this file, see the

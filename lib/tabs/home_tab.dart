@@ -1,4 +1,5 @@
 import 'package:armarios_inteligentes/screens/home_screen.dart';
+import 'package:armarios_inteligentes/screens/qrcode_screen.dart';
 import 'package:armarios_inteligentes/screens/qrscan_screen.dart';
 import 'package:flutter/material.dart';
 

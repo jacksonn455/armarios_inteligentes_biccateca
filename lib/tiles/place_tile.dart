@@ -1,3 +1,4 @@
+import 'package:armarios_inteligentes/screens/category_screen.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -10,12 +11,12 @@ class PlaceTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      margin: EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
+      margin: EdgeInsets.symmetric(horizontal: 8.0, vertical: 2.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           SizedBox(
-            height: 135.0,
+            height: 120.0,
             child: Image.network(
               snapshot.data["image"],
               fit: BoxFit.cover,
@@ -64,7 +65,7 @@ class PlaceTile extends StatelessWidget {
                 onPressed: () {
                   launch(
                       "https://www.google.com/maps/search/?api=1&query=${snapshot.data["lat"]},"
-                      "${snapshot.data["long"]}");
+                          "${snapshot.data["long"]}");
                 },
               ),
               FlatButton(
@@ -76,7 +77,45 @@ class PlaceTile extends StatelessWidget {
                 },
               ),
             ],
-          )
+          ),
+          SizedBox(height: 5.0,),
+          Divider(),
+          ListTile(
+            leading: CircleAvatar(
+              backgroundColor: Colors.transparent,
+              backgroundImage: NetworkImage(snapshot.data["instagram"]),
+            ),
+            title: Text(snapshot.data["txtInsta"]),
+            onTap: (){
+              launch(
+                  "https://www.instagram.com/biccateca/?hl=pt-br");
+            },
+          ),
+          Divider(),
+          ListTile(
+            leading: CircleAvatar(
+              backgroundColor: Colors.transparent,
+              backgroundImage: NetworkImage(snapshot.data["facebook"]),
+            ),
+            title: Text(snapshot.data["txtFace"]),
+            onTap: (){
+              launch(
+                  "https://www.facebook.com/Biccateca/");
+            },
+          ),
+          Divider(),
+          ListTile(
+            leading: CircleAvatar(
+              backgroundColor: Colors.transparent,
+              backgroundImage: NetworkImage(snapshot.data["youtube"]),
+            ),
+            title: Text(snapshot.data["txtYoutube"]),
+            onTap: (){
+              launch(
+                  "https://www.youtube.com/user/Biccateca");
+            },
+          ),
+          SizedBox(height: 10.0,),
         ],
       ),
     );
