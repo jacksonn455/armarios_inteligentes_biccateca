@@ -18,7 +18,7 @@ Aplicativo em desenvolvimento para utilizar armários inteligentes
   
  Tela de Menu
  
- ![](https://github.com/jacksonn455/armarios_inteligentes/blob/master/menu.png)
+ ![](https://github.com/jacksonn455/armarios_inteligentes/blob/master/menus.png)
 --------------------
 
  Tela de Sobre
