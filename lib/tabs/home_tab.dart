@@ -1,4 +1,5 @@
 import 'package:armarios_inteligentes/screens/home_screen.dart';
+import 'package:armarios_inteligentes/screens/qrscan_screen.dart';
 import 'package:flutter/material.dart';
 
 class HomeTab extends StatelessWidget {
@@ -19,7 +20,7 @@ class HomeTab extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => HomeScreen()),
+                    MaterialPageRoute(builder: (context) =>  QrScan()),
                   );
                 },
               ),

@@ -18,7 +18,6 @@ class CustomDrawer extends StatelessWidget {
             Colors.white,
             Colors.white,
             Colors.white,
-
           ], begin: Alignment.topCenter, end: Alignment.bottomCenter)),
         );
 
@@ -48,6 +47,7 @@ class CustomDrawer extends StatelessWidget {
                     ),
                     Positioned(
                         left: 0.0,
+                        right: 0.0,
                         bottom: 0.0,
                         child: ScopedModelDescendant<UserModel>(
                           builder: (context, child, model) {

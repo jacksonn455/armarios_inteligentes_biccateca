@@ -121,9 +121,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
         Navigator.of(context).pushReplacement(
             MaterialPageRoute(builder: (context)=>NewLoginScreen())
         );
-    Future.delayed(Duration(seconds: 2)).then((_){
-      Navigator.of(context).pop();
-    });
   }
 
   void _onFail(){

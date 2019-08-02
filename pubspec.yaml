@@ -37,7 +37,8 @@ dependencies:
   shimmer: ^1.0.0
   flutter_launcher_icons: ^0.7.0
   path_provider: 0.4.1
-
+  simple_permissions: ^0.1.2
+  barcode_scan: ^0.0.4
 
 
 
