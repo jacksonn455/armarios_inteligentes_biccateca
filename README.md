@@ -7,6 +7,11 @@ Aplicativo em desenvolvimento para utilizar armários inteligentes
 
  --------------------
  
+ Tela do icone
+ 
+ ![](https://github.com/jacksonn455/armarios_inteligentes/blob/master/icons.png)
+--------------------
+ 
  Tela de Splash
  
  ![](https://github.com/jacksonn455/armarios_inteligentes/blob/master/Splash.png)
