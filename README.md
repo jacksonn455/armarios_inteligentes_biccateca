@@ -7,5 +7,31 @@ Aplicativo em desenvolvimento para utilizar armários inteligentes
 
  --------------------
  
- ![](https://github.com/jacksonn455/armarios_inteligentes/blob/master/Login%201/login2.png)
+ Tela do icone
+ 
+ ![](https://github.com/jacksonn455/armarios_inteligentes/blob/master/icons.png)
+--------------------
+ 
+ Tela de Splash
+ 
+ ![](https://github.com/jacksonn455/armarios_inteligentes/blob/master/Splash.png)
+--------------------
+ Tela de Login
+ 
+ ![](https://github.com/jacksonn455/armarios_inteligentes/blob/master/login.png)
+--------------------
+  
+ Tela de Menu
+ 
+ ![](https://github.com/jacksonn455/armarios_inteligentes/blob/master/menus.png)
+--------------------
+
+ Tela de Sobre
+ 
+ ![](https://github.com/jacksonn455/armarios_inteligentes/blob/master/Sobre%203.png)
+--------------------
+ 
+ Tela de Escaneamento
+ 
+ ![](https://github.com/jacksonn455/armarios_inteligentes/blob/master/QR%20Code.png)
 --------------------
