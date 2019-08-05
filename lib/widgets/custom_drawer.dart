@@ -26,16 +26,15 @@ class CustomDrawer extends StatelessWidget {
         children: <Widget>[
           _buildDrawerBack(),
           ListView(
-            padding: EdgeInsets.only(left: 32.0, top: 16.0),
+            padding: EdgeInsets.only(left: 32.0, top: 20.0),
             children: <Widget>[
               Container(
-                margin: EdgeInsets.only(bottom: 8.0),
-                padding: EdgeInsets.fromLTRB(0.0, 16.0, 16.0, 8.0),
+                padding: EdgeInsets.fromLTRB(0.0, 16.0, 16.0, 20.0),
                 height: 190.0,
                 child: Stack(
                   children: <Widget>[
                     Positioned(
-                      top: 16.0,
+                      top: 15.0,
                       left: 0.0,
                       child: Text(
                         "Armários \nInteligentes",
@@ -56,7 +55,7 @@ class CustomDrawer extends StatelessWidget {
                               children: <Widget>[
                                 Text(
                                   "Olá, ${!model.isLoggedIn() ? "" : model.userData["name"]}",
-                                  style: TextStyle(fontSize: 18.0),
+                                  style: TextStyle(fontSize: 17.0, fontWeight: FontWeight.w700),
                                 ),
                                 GestureDetector(
                                   child: Text(

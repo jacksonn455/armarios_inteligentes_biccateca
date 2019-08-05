@@ -1,6 +1,6 @@
-import 'package:barcode_scan/barcode_scan.dart';
+import 'package:armarios_inteligentes/screens/qr_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+
 
 class QrScan extends StatefulWidget {
   @override
@@ -27,15 +27,13 @@ class QrScanState extends State<QrScan> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             SizedBox(
-              height: 20,
+              height: 15,
             ),
             Container(
-              height: 300,
-              width: 300,
+              height: 340,
+              width: 340,
               child: Image.asset(
                 "images/box2.png",
-                width: 400,
-                height: 400,
                 fit: BoxFit.contain,
               ),
             ),
@@ -43,23 +41,33 @@ class QrScanState extends State<QrScan> {
               height: 20,
             ),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 80, vertical: 10.0),
-              child: RaisedButton(
-                color: Colors.lightBlueAccent,
-                textColor: Colors.white,
-                splashColor: Colors.lightBlueAccent,
-                onPressed: () {
-                  scan();
-                },
-                // scan,
-                child: const Text('Escanear o QR Code.'),
+              padding: EdgeInsets.symmetric(horizontal: 80, vertical: 5.0),
+              child:                           SizedBox(
+                height: 30,
+                width: 200,
+                child: new RaisedButton(
+                    color: Colors.lightBlueAccent,
+                    child: Text(
+                      "Escanear",
+                      style: TextStyle(
+                        fontSize: 15.0, color: Colors.white
+                      ),
+                    ),
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) =>  LiveBarcodeScanner())
+                      );
+                    },
+                    shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(30.0))
+                ),
               ),
             ),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+              padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 20.0),
               child: Text(
                 _barcode,
-                textAlign: TextAlign.center,
+                textAlign: TextAlign.justify,
                 style: TextStyle(color: Colors.red),
               ),
             ),
@@ -68,7 +76,7 @@ class QrScanState extends State<QrScan> {
       ),
     );
   }
-
+/*
   Future scan() async {
     try {
       String barcode = await BarcodeScanner.scan();
@@ -82,10 +90,11 @@ class QrScanState extends State<QrScan> {
         setState(() => this._barcode = 'Erro desconhecido $e');
       }
     } on FormatException {
-      setState(() => this._barcode =
-          'nulo, o usuário clicou em voltar antes de escanear algo');
+      setState(() =>
+      this._barcode =
+      'nulo, o usuário clicou em voltar antes de escanear algo');
     } catch (e) {
       setState(() => this._barcode = 'Erro desconhecido : $e');
     }
-  }
+  }*/
 }

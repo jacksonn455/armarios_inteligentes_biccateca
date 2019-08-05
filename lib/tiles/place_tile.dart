@@ -11,7 +11,7 @@ class PlaceTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      margin: EdgeInsets.symmetric(horizontal: 8.0, vertical: 2.0),
+      margin: EdgeInsets.symmetric(horizontal: 8.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
@@ -78,14 +78,13 @@ class PlaceTile extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(height: 5.0,),
           Divider(),
           ListTile(
             leading: CircleAvatar(
               backgroundColor: Colors.transparent,
               backgroundImage: NetworkImage(snapshot.data["instagram"]),
             ),
-            title: Text(snapshot.data["txtInsta"]),
+            title: Text(snapshot.data["txtInsta"],style: TextStyle(fontWeight: FontWeight.w500),),
             onTap: (){
               launch(
                   "https://www.instagram.com/biccateca/?hl=pt-br");
@@ -97,7 +96,7 @@ class PlaceTile extends StatelessWidget {
               backgroundColor: Colors.transparent,
               backgroundImage: NetworkImage(snapshot.data["facebook"]),
             ),
-            title: Text(snapshot.data["txtFace"]),
+            title: Text(snapshot.data["txtFace"],style: TextStyle(fontWeight: FontWeight.w500),),
             onTap: (){
               launch(
                   "https://www.facebook.com/Biccateca/");
@@ -109,7 +108,7 @@ class PlaceTile extends StatelessWidget {
               backgroundColor: Colors.transparent,
               backgroundImage: NetworkImage(snapshot.data["youtube"]),
             ),
-            title: Text(snapshot.data["txtYoutube"]),
+            title: Text(snapshot.data["txtYoutube"],style: TextStyle(fontWeight: FontWeight.w500),),
             onTap: (){
               launch(
                   "https://www.youtube.com/user/Biccateca");
