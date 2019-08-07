@@ -1,8 +1,11 @@
 import 'dart:async';
 import 'package:armarios_inteligentes/models/user_model.dart';
 import 'package:armarios_inteligentes/screens/NewLogin_screen.dart';
+import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
 import 'package:scoped_model/scoped_model.dart';
+
+import 'ok_screen.dart';
 
 class SignUpScreen extends StatefulWidget {
   @override
@@ -119,7 +122,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
   void _onSuccess(){
         Navigator.of(context).pushReplacement(
-            MaterialPageRoute(builder: (context)=>NewLoginScreen())
+            MaterialPageRoute(builder: (context)=>OkScreen())
         );
   }
 

@@ -12,7 +12,6 @@ class NewLoginScreen extends StatefulWidget {
 class _NewLoginScreenState extends State<NewLoginScreen> {
   final _emailController = TextEditingController();
   final _passController = TextEditingController();
-
   final _formKey = GlobalKey<FormState>();
   final _scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -135,7 +134,7 @@ class _NewLoginScreenState extends State<NewLoginScreen> {
                             height: 50,
                             width: 350,
                             child: new RaisedButton(
-                              color: Colors.white,
+                                color: Colors.white,
                                 child: Text(
                                   "Entrar",
                                   style: TextStyle(
@@ -150,10 +149,11 @@ class _NewLoginScreenState extends State<NewLoginScreen> {
                                       onSuccess: _onSuccess,
                                       onFail: _onFail);
                                 },
-                                shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(30.0))
-                            ),
+                                shape: new RoundedRectangleBorder(
+                                    borderRadius:
+                                        new BorderRadius.circular(30.0))),
                           ),
-                          SignUpButton()
+                          SignUpButton(),
                         ],
                       ),
                     ],
@@ -168,9 +168,8 @@ class _NewLoginScreenState extends State<NewLoginScreen> {
   }
 
   void _onSuccess() {
-    Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (context)=>HomeScreen())
-    );
+    Navigator.of(context)
+        .pushReplacement(MaterialPageRoute(builder: (context) => HomeScreen()));
   }
 
   void _onFail() {

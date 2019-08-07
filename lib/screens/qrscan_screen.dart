@@ -1,4 +1,5 @@
 import 'package:armarios_inteligentes/screens/qr_screen.dart';
+import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
 
 
@@ -32,10 +33,7 @@ class QrScanState extends State<QrScan> {
             Container(
               height: 340,
               width: 340,
-              child: Image.asset(
-                "images/box2.png",
-                fit: BoxFit.contain,
-              ),
+              child: FlareActor("assets/Locker3.flr", animation: "scan",),
             ),
             SizedBox(
               height: 20,
