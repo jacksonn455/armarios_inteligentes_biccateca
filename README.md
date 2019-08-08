@@ -18,7 +18,7 @@ Aplicativo em desenvolvimento para utilizar armários inteligentes
 --------------------
  Tela de Login
  
- ![](https://github.com/jacksonn455/armarios_inteligentes/blob/master/login.png)
+ ![](https://github.com/jacksonn455/armarios_inteligentes/blob/master/login2.png)
 --------------------
   
  Tela de Menu
