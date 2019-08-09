@@ -9,7 +9,7 @@ Aplicativo em desenvolvimento para utilizar armários inteligentes
  
  Tela do icone
  
- ![](https://github.com/jacksonn455/armarios_inteligentes_wtec/blob/master/icons.png)
+ ![](https://github.com/jacksonn455/armarios_inteligentes_wtec/blob/master/icone.png)
 --------------------
  
  Tela de Splash
