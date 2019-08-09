@@ -49,7 +49,7 @@ class _SplashState extends State<Splash> {
               Container(
                 height: 340,
                 width: 340,
-                child: FlareActor("assets/ok3.flr", animation: "certo",),
+                child: FlareActor("assets/ok4.flr", animation: "certo",),
               ),
             ],
           ),

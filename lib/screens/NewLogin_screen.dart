@@ -41,7 +41,7 @@ class _NewLoginScreenState extends State<NewLoginScreen> {
                       Column(
                         children: <Widget>[
                           Padding(
-                            padding: EdgeInsets.only(top: 20),
+                            padding: EdgeInsets.only(top: 0),
                             child: Image.asset(
                               "images/logo2.png",
                               width: 200,
@@ -154,6 +154,15 @@ class _NewLoginScreenState extends State<NewLoginScreen> {
                                         new BorderRadius.circular(30.0))),
                           ),
                           SignUpButton(),
+                          Padding(
+                            padding: EdgeInsets.only(top: 0),
+                            child: Image.asset(
+                              "images/biccateca1.png",
+                              width: 150,
+                              height: 150,
+                              fit: BoxFit.contain,
+                            ),
+                          ),
                         ],
                       ),
                     ],
