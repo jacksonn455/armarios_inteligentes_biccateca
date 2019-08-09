@@ -1,9 +1,9 @@
-Armários Inteligentes
+Arm�rios Inteligentes
 ===============================================
 
 --------------------
 
-Aplicativo em desenvolvimento para utilizar armários inteligentes
+Aplicativo em desenvolvimento para utilizar arm�rios inteligentes
 
  --------------------
  
@@ -20,10 +20,25 @@ Aplicativo em desenvolvimento para utilizar armários inteligentes
  
  ![](https://github.com/jacksonn455/armarios_inteligentes/blob/master/login2.png)
 --------------------
-  
+ 
+ Tela de Home
+ 
+ ![](https://github.com/jacksonn455/armarios_inteligentes/blob/master/home.png)
+--------------------
+ 
  Tela de Menu
  
  ![](https://github.com/jacksonn455/armarios_inteligentes/blob/master/menus.png)
+--------------------
+
+ Tela de Preferencia
+ 
+ ![](https://github.com/jacksonn455/armarios_inteligentes/blob/master/preferencia.png)
+--------------------
+
+ Tela de Pol�tica de privacidade
+ 
+ ![](https://github.com/jacksonn455/armarios_inteligentes/blob/master/privacidade.png)
 --------------------
 
  Tela de Sobre
@@ -34,4 +49,9 @@ Aplicativo em desenvolvimento para utilizar armários inteligentes
  Tela de Escaneamento
  
  ![](https://github.com/jacksonn455/armarios_inteligentes/blob/master/QR%20Code.png)
+--------------------
+
+ Tela de Escanner
+ 
+ ![](https://github.com/jacksonn455/armarios_inteligentes/blob/master/qr%20codee.png)
 --------------------

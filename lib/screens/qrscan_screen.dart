@@ -18,7 +18,6 @@ class QrScan extends StatefulWidget {
 class QrScanState extends State<QrScan> {
   String _status = "";
   String error = "";
-  String error2 = "";
   String nome="";
 
   @override
@@ -94,6 +93,7 @@ class QrScanState extends State<QrScan> {
 
   void SalvarMensagem() async {
     this._status = _status;
+    if(_status != _status) // testar
     await Firestore.instance
         .collection("lockers")
         .document()
@@ -117,12 +117,12 @@ class QrScanState extends State<QrScan> {
           error = ', você não deu perimissão para usar a camera!';
         });
       } else {
-        setState(() => error2 = ' erro desconhecido $e');
+        setState(() => error = ', aconteceu um erro desconhecido $e');
       }
     } on FormatException {
       setState(() => error = ', você clicou em voltar antes de escanear algo');
     } catch (e) {
-      setState(() => error2 = ' erro desconhecido : $e');
+      setState(() => error = ' aconteceu erro desconhecido : $e');
     }
   }
 }

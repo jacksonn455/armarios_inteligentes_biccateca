@@ -12,7 +12,7 @@ class LockerTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      title: Text(snapshot.data["QR Code"]),
+      title: Text(snapshot.data["QR Code"], textAlign: TextAlign.justify,),
       trailing: Icon(Icons.keyboard_arrow_right),
       onTap: (){
         Navigator.of(context).push(
