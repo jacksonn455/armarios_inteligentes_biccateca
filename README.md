@@ -21,9 +21,19 @@ Aplicativo em desenvolvimento para utilizar armários inteligentes
  ![](https://github.com/jacksonn455/armarios_inteligentes_wtec/blob/master/login2.png)
 --------------------
  
+  Tela de Cadastro
+ 
+ ![](https://github.com/jacksonn455/armarios_inteligentes_wtec/blob/master/cadastro.png)
+--------------------
+
+ Tela de Login
+ 
+ ![](https://github.com/jacksonn455/armarios_inteligentes_wtec/blob/master/login2.png)
+--------------------
+
  Tela de Home
  
- ![](https://github.com/jacksonn455/armarios_inteligentes_wtec/blob/master/home.png)
+ ![](https://github.com/jacksonn455/armarios_inteligentes_wtec/blob/master/confirma%C3%A7%C3%A3o%20cadastro.png)
 --------------------
  
  Tela de Menu
