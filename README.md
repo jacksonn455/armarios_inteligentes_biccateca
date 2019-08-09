@@ -1,57 +1,57 @@
-Arm·rios Inteligentes
+Arm√°rios Inteligentes
 ===============================================
 
 --------------------
 
-Aplicativo em desenvolvimento para utilizar arm·rios inteligentes
+Aplicativo em desenvolvimento para utilizar arm√°rios inteligentes
 
  --------------------
  
  Tela do icone
  
- ![](https://github.com/jacksonn455/armarios_inteligentes/blob/master/icons.png)
+ ![](https://github.com/jacksonn455/armarios_inteligentes_wtec/blob/master/icons.png)
 --------------------
  
  Tela de Splash
  
- ![](https://github.com/jacksonn455/armarios_inteligentes/blob/master/Splash.png)
+ ![](https://github.com/jacksonn455/armarios_inteligentes_wtec/blob/master/Splash.png)
 --------------------
  Tela de Login
  
- ![](https://github.com/jacksonn455/armarios_inteligentes/blob/master/login2.png)
+ ![](https://github.com/jacksonn455/armarios_inteligentes_wtec/blob/master/login2.png)
 --------------------
  
  Tela de Home
  
- ![](https://github.com/jacksonn455/armarios_inteligentes/blob/master/home.png)
+ ![](https://github.com/jacksonn455/armarios_inteligentes_wtec/blob/master/home.png)
 --------------------
  
  Tela de Menu
  
- ![](https://github.com/jacksonn455/armarios_inteligentes/blob/master/menus.png)
+ ![](https://github.com/jacksonn455/armarios_inteligentes_wtec/blob/master/menus.png)
 --------------------
 
  Tela de Preferencia
  
- ![](https://github.com/jacksonn455/armarios_inteligentes/blob/master/preferencia.png)
+ ![](https://github.com/jacksonn455/armarios_inteligentes_wtec/blob/master/preferencia.png)
 --------------------
 
- Tela de PolÌtica de privacidade
+ Tela de Pol√≠tica de privacidade
  
- ![](https://github.com/jacksonn455/armarios_inteligentes/blob/master/privacidade.png)
+ ![](https://github.com/jacksonn455/armarios_inteligentes_wtec/blob/master/privacidade.png)
 --------------------
 
  Tela de Sobre
  
- ![](https://github.com/jacksonn455/armarios_inteligentes/blob/master/Sobre%203.png)
+ ![](https://github.com/jacksonn455/armarios_inteligentes_wtec/blob/master/Sobre%203.png)
 --------------------
  
  Tela de Escaneamento
  
- ![](https://github.com/jacksonn455/armarios_inteligentes/blob/master/QR%20Code.png)
+ ![](https://github.com/jacksonn455/armarios_inteligentes_wtec/blob/master/QR%20Code.png)
 --------------------
 
  Tela de Escanner
  
- ![](https://github.com/jacksonn455/armarios_inteligentes/blob/master/qr%20codee.png)
+ ![](https://github.com/jacksonn455/armarios_inteligentes_wtec/blob/master/qr%20codee.png)
 --------------------
