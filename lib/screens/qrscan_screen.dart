@@ -7,6 +7,7 @@ import 'package:flutter/services.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:scoped_model/scoped_model.dart';
 import 'home_screen.dart';
+import 'package:mysql1/mysql1.dart';
 
 class QrScan extends StatefulWidget {
   @override
@@ -15,10 +16,13 @@ class QrScan extends StatefulWidget {
   }
 }
 
+
 class QrScanState extends State<QrScan> {
   String _status = "";
   String error = "";
   String nome="";
+  String _numeroSerie = "";
+  String _results ="";
 
   @override
   Widget build(BuildContext context) {
@@ -91,13 +95,29 @@ class QrScanState extends State<QrScan> {
     );
   }
 
+  Future dataBase(String results) async {
+
+  }
+
   void SalvarMensagem() async {
+
+    final connection = await MySqlConnection.connect(new ConnectionSettings(
+      host: '127.0.0.1',
+      port: 3306,
+      user: 'root',
+      password: 'admin',
+      db: 'armariosinteligentes',
+    ));
+
     this._status = _status;
-    if(_status != _status) // testar
+    _numeroSerie = _status.substring(48,80);
+    _results = (await connection.query('select id_armario from armarios where numero_serie = $_numeroSerie')) as String;
     await Firestore.instance
         .collection("lockers")
         .document()
-        .setData({"QR Code": _status});
+        .setData({"QR Code": "Armario 0000" + _results });
+
+    await connection.close();
   }
 
   void telaInicial() {
