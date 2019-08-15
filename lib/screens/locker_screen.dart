@@ -19,36 +19,37 @@ class LockerScreenState extends State<LockerScreen> {
         centerTitle: true,
       ),
       body: ListView(
-        padding: EdgeInsets.all(16.0),
+        padding: EdgeInsets.all(8.0),
         children: <Widget>[
+          SizedBox(height: 10.0,),
           Text(
             "Modo de Operação: ",
             textAlign: TextAlign.justify,
             style: TextStyle(fontSize: 16.0),
           ),
+          SizedBox(height: 10.0,),
           Divider( ),
+          SizedBox(height: 10.0,),
           Text(
             "Nível de Acesso: ",
             textAlign: TextAlign.justify,
             style: TextStyle(fontSize: 16.0),
           ),
-          Divider( ),
-          SizedBox(height: 10.0,),
+          SizedBox(height: 15.0,),
           SizedBox(
             child: Container(
               height: 35.0,
               padding: EdgeInsets.all(8.0),
-              child: Text("Meus Compartimentos",style: TextStyle(fontSize: 16.0, color: Colors.white),textAlign: TextAlign.center,),
+              child: Text("Meus Compartimentos",style: TextStyle(fontSize: 16.0, color: Colors.white, fontWeight: FontWeight.w500),textAlign: TextAlign.center,),
               color: Colors.lightBlueAccent,
             ),
           ),
-          SizedBox(height: 10.0,),
           ListTile(
             leading: CircleAvatar(
               backgroundColor: Colors.transparent,
               backgroundImage: AssetImage("images/door.png"),
             ),
-            title: Text("Porta 01",style: TextStyle(fontWeight: FontWeight.w500),),
+            title: Text("Porta 01"),
             onTap: (){
               launch(
                   "https://www.instagram.com/biccateca/?hl=pt-br");
@@ -60,28 +61,26 @@ class LockerScreenState extends State<LockerScreen> {
               backgroundColor: Colors.transparent,
               backgroundImage: AssetImage("images/door.png"),
             ),
-            title: Text("Porta 02",style: TextStyle(fontWeight: FontWeight.w500),),
+            title: Text("Porta 02"),
             onTap: (){
               launch(
                   "https://www.instagram.com/biccateca/?hl=pt-br");
             },
           ),
-          Divider( ),
           SizedBox(
             child: Container(
               height: 35.0,
               padding: EdgeInsets.all(8.0),
-              child: Text("Opções",style: TextStyle(fontSize: 16.0, color: Colors.white),textAlign: TextAlign.center,),
+              child: Text("Opções",style: TextStyle(fontSize: 16.0, color: Colors.white, fontWeight: FontWeight.w500),textAlign: TextAlign.center,),
               color: Colors.lightBlueAccent,
             ),
           ),
-          SizedBox(height: 10.0,),
           ListTile(
             leading: CircleAvatar(
               backgroundColor: Colors.transparent,
               backgroundImage: AssetImage("images/rotinas2.png"),
             ),
-            title: Text("Rotinas",style: TextStyle(fontWeight: FontWeight.w500),),
+            title: Text("Rotinas"),
             onTap: (){
               launch(
                   "https://www.instagram.com/biccateca/?hl=pt-br");
@@ -93,7 +92,7 @@ class LockerScreenState extends State<LockerScreen> {
               backgroundColor: Colors.transparent,
               backgroundImage: AssetImage("images/relatorio.jpg"),
             ),
-            title: Text("Relatórios",style: TextStyle(fontWeight: FontWeight.w500),),
+            title: Text("Relatórios"),
             onTap: (){
               launch(
                   "https://www.instagram.com/biccateca/?hl=pt-br");
@@ -105,13 +104,12 @@ class LockerScreenState extends State<LockerScreen> {
               backgroundColor: Colors.transparent,
               backgroundImage: AssetImage("images/configure.jpg"),
             ),
-            title: Text("Configurações",style: TextStyle(fontWeight: FontWeight.w500),),
+            title: Text("Configurações"),
             onTap: (){
               launch(
                   "https://www.instagram.com/biccateca/?hl=pt-br");
             },
           ),
-          Divider( ),
         ],
       ),
     );

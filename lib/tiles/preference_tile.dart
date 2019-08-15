@@ -12,17 +12,10 @@ class PlaceTile extends StatelessWidget {
     return Card(
       margin: EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: <Widget>[
-          SizedBox(
-            height: 135.0,
-            child: Image.network(
-              snapshot.data["image"],
-              fit: BoxFit.cover,
-            ),
-          ),
-        ],
-      ),
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            SizedBox(height: 135.0, child: Image.asset("images/privacidade.png")),
+          ]),
     );
   }
 }

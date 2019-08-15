@@ -45,7 +45,7 @@ class _NewLoginScreenState extends State<NewLoginScreen> {
                             child: Image.asset(
                               "images/logo2.png",
                               width: 200,
-                              height: 200,
+                              height: 185,
                               fit: BoxFit.contain,
                             ),
                           ),
@@ -128,11 +128,11 @@ class _NewLoginScreenState extends State<NewLoginScreen> {
                             ),
                           ),
                           SizedBox(
-                            height: 30,
+                            height: 20,
                           ),
                           SizedBox(
                             height: 50,
-                            width: 350,
+                            width: 300,
                             child: new RaisedButton(
                                 color: Colors.white,
                                 child: Text(
@@ -159,7 +159,7 @@ class _NewLoginScreenState extends State<NewLoginScreen> {
                             child: Image.asset(
                               "images/biccateca1.png",
                               width: 150,
-                              height: 150,
+                              height: 100,
                               fit: BoxFit.contain,
                             ),
                           ),

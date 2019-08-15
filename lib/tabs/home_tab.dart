@@ -4,7 +4,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 class HomeTab extends StatelessWidget {
-  TextEditingController _status = new TextEditingController();
 
   @override
   Widget build(BuildContext context) {

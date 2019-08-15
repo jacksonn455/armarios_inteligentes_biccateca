@@ -17,8 +17,8 @@ class PlaceTile extends StatelessWidget {
         children: <Widget>[
           SizedBox(
             height: 120.0,
-            child: Image.network(
-              snapshot.data["image"],
+            child: Image.asset(
+              "images/wtec.jpg",
               fit: BoxFit.cover,
             ),
           ),
@@ -82,7 +82,7 @@ class PlaceTile extends StatelessWidget {
           ListTile(
             leading: CircleAvatar(
               backgroundColor: Colors.transparent,
-              backgroundImage: NetworkImage(snapshot.data["instagram"]),
+              backgroundImage: AssetImage("images/instagram.png"),
             ),
             title: Text(snapshot.data["txtInsta"],style: TextStyle(fontWeight: FontWeight.w500),),
             onTap: (){
@@ -94,7 +94,7 @@ class PlaceTile extends StatelessWidget {
           ListTile(
             leading: CircleAvatar(
               backgroundColor: Colors.transparent,
-              backgroundImage: NetworkImage(snapshot.data["facebook"]),
+              backgroundImage: AssetImage("images/facebook.png"),
             ),
             title: Text(snapshot.data["txtFace"],style: TextStyle(fontWeight: FontWeight.w500),),
             onTap: (){
@@ -106,7 +106,7 @@ class PlaceTile extends StatelessWidget {
           ListTile(
             leading: CircleAvatar(
               backgroundColor: Colors.transparent,
-              backgroundImage: NetworkImage(snapshot.data["youtube"]),
+              backgroundImage:AssetImage("images/youtube.png"),
             ),
             title: Text(snapshot.data["txtYoutube"],style: TextStyle(fontWeight: FontWeight.w500),),
             onTap: (){

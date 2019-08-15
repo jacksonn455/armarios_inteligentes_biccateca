@@ -13,7 +13,6 @@ class SignUpScreen extends StatefulWidget {
 }
 
 class _SignUpScreenState extends State<SignUpScreen> {
-
   final _nameController = TextEditingController();
   final _emailController = TextEditingController();
   final _passController = TextEditingController();
@@ -26,114 +25,191 @@ class _SignUpScreenState extends State<SignUpScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         key: _scaffoldKey,
-        appBar: AppBar(
-          backgroundColor: Colors.lightBlueAccent,
-          title: Text("Criar Conta"),
-          centerTitle: true,
-        ),
         body: ScopedModelDescendant<UserModel>(
-          builder: (context, child, model){
-            if(model.isLoading)
-              return Center(child: CircularProgressIndicator(),);
+          builder: (context, child, model) {
+            if (model.isLoading)
+              return Center(
+                child: CircularProgressIndicator(),
+              );
 
             return Form(
               key: _formKey,
-              child: ListView(
-                padding: EdgeInsets.all(16.0),
-                children: <Widget>[
-                  TextFormField(
-                    controller: _nameController,
-                    decoration: InputDecoration(
-                        hintText: "Nome Completo"
-                    ),
-                    validator: (text){
-                      if(text.isEmpty) return "Nome Inválido!";
-                    },
-                  ),
-                  SizedBox(height: 16.0,),
-                  TextFormField(
-                    controller: _emailController,
-                    decoration: InputDecoration(
-                        hintText: "E-mail"
-                    ),
-                    keyboardType: TextInputType.emailAddress,
-                    validator: (text){
-                      if(text.isEmpty || !text.contains("@")) return "E-mail inválido!";
-                    },
-                  ),
-                  SizedBox(height: 16.0,),
-                  TextFormField(
-                    controller: _passController,
-                    decoration: InputDecoration(
-                        hintText: "Senha"
-                    ),
-                    obscureText: true,
-                    validator: (text){
-                      if(text.isEmpty || text.length < 6) return "Senha inválida!";
-                    },
-                  ),
-                  SizedBox(height: 16.0,),
-                  TextFormField(
-                    controller: _addressController,
-                    decoration: InputDecoration(
-                        hintText: "Endereço"
-                    ),
-                    validator: (text){
-                      if(text.isEmpty) return "Endereço inválido!";
-                    },
-                  ),
-                  SizedBox(height: 16.0,),
-                  SizedBox(
-                    height: 44.0,
-                    child: RaisedButton(
-                      child: Text("Criar Conta",
-                        style: TextStyle(
-                          fontSize: 18.0,
+              child: Container(
+                decoration: BoxDecoration(
+                    image: DecorationImage(
+                        image: AssetImage("images/wallpaper2.jpeg"),
+                        fit: BoxFit.cover)),
+                child: ListView(
+                  padding: EdgeInsets.only(left: 25.0, right: 25.0),
+                  children: <Widget>[
+                    Stack(
+                      alignment: Alignment.bottomCenter,
+                      children: <Widget>[
+                        Column(
+                          children: <Widget>[
+                            Padding(
+                              padding: EdgeInsets.only(top: 10.0),
+                              child: Image.asset(
+                                "images/logo2.png",
+                                width: 200,
+                                height: 200,
+                                fit: BoxFit.contain,
+                              ),
+                            ),
+                            TextFormField(
+                              style: TextStyle(color: Colors.white),
+                              controller: _nameController,
+                              decoration: InputDecoration(
+                                hintStyle: TextStyle(
+                                    color: Colors.white,
+                                    fontFamily: "WorkSansLight",
+                                    fontSize: 15.0),
+                                hintText: "Nome Completo",
+                                focusedBorder: UnderlineInputBorder(
+                                    borderSide:
+                                    BorderSide(color: Colors.white)),
+                                prefixIcon: const Icon(
+                                  Icons.person,
+                                  color: Colors.white,
+                                ),
+                              ),
+                              validator: (text) {
+                                if (text.isEmpty) return "Nome Inválido!";
+                              },
+                            ),
+                            SizedBox(
+                              height: 16.0,
+                            ),
+                            TextFormField(
+                              style: TextStyle(color: Colors.white),
+                              controller: _emailController,
+                              decoration: InputDecoration(
+                                hintStyle: TextStyle(
+                                    color: Colors.white,
+                                    fontFamily: "WorkSansLight",
+                                    fontSize: 15.0),
+                                hintText: "E-mail",
+                                focusedBorder: UnderlineInputBorder(
+                                    borderSide:
+                                        BorderSide(color: Colors.white)),
+                                prefixIcon: const Icon(
+                                  Icons.email,
+                                  color: Colors.white,
+                                ),
+                              ),
+                              keyboardType: TextInputType.emailAddress,
+                              validator: (text) {
+                                if (text.isEmpty || !text.contains("@"))
+                                  return "E-mail inválido!";
+                              },
+                            ),
+                            SizedBox(
+                              height: 16.0,
+                            ),
+                            TextFormField(
+                              style: TextStyle(color: Colors.white),
+                              controller: _passController,
+                                decoration: InputDecoration(
+                                  hintStyle: TextStyle(
+                                      color: Colors.white,
+                                      fontFamily: "WorkSansLight",
+                                      fontSize: 15.0),
+                                  hintText: "Senha",
+                                  focusedBorder: UnderlineInputBorder(
+                                      borderSide:
+                                      BorderSide(color: Colors.white)),
+                                  prefixIcon: const Icon(
+                                    Icons.lock_outline,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              obscureText: true,
+                              validator: (text) {
+                                if (text.isEmpty || text.length < 6)
+                                  return "Senha inválida!";
+                              },
+                            ),
+                            SizedBox(
+                              height: 16.0,
+                            ),
+                            TextFormField(
+                              style: TextStyle(color: Colors.white),
+                              controller: _addressController,
+                                decoration: InputDecoration(
+                                  hintStyle: TextStyle(
+                                      color: Colors.white,
+                                      fontFamily: "WorkSansLight",
+                                      fontSize: 15.0),
+                                  hintText: "Endereço",
+                                  focusedBorder: UnderlineInputBorder(
+                                      borderSide:
+                                      BorderSide(color: Colors.white)),
+                                  prefixIcon: const Icon(
+                                    Icons.location_on,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              validator: (text) {
+                                if (text.isEmpty) return "Endereço inválido!";
+                              },
+                            ),
+                            SizedBox(
+                              height: 45.0,
+                            ),
+                            SizedBox(
+                              height: 40.0,
+                              width: 300.0,
+                              child: new RaisedButton(
+                                color: Colors.white,
+                                child: Text(
+                                  "Criar Conta",
+                                  style: TextStyle(
+                                    fontSize: 18.0,
+                                  ),
+                                ),
+                                onPressed: () {
+                                  if (_formKey.currentState.validate()) {
+                                    Map<String, dynamic> userData = {
+                                      "name": _nameController.text,
+                                      "email": _emailController.text,
+                                      "address": _addressController.text
+                                    };
+
+
+                                    model.signUp(
+                                        userData: userData,
+                                        pass: _passController.text,
+                                        onSuccess: _onSuccess,
+                                        onFail: _onFail);
+                                  }
+                                },
+                                  shape: new RoundedRectangleBorder(
+                                      borderRadius:
+                                      new BorderRadius.circular(30.0)),
+                              ),
+                            ),
+                          ],
                         ),
-                      ),
-                      textColor: Colors.white,
-                      color: Colors.lightBlueAccent,
-                      onPressed: (){
-                        if(_formKey.currentState.validate()){
-
-                          Map<String, dynamic> userData = {
-                            "name": _nameController.text,
-                            "email": _emailController.text,
-                            "address": _addressController.text
-                          };
-
-                          model.signUp(
-                              userData: userData,
-                              pass: _passController.text,
-                              onSuccess: _onSuccess,
-                              onFail: _onFail
-                          );
-                        }
-                      },
+                      ],
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             );
           },
-        )
-    );
+        ));
   }
 
-  void _onSuccess(){
-        Navigator.of(context).pushReplacement(
-            MaterialPageRoute(builder: (context)=>OkScreen())
-        );
+  void _onSuccess() {
+    Navigator.of(context)
+        .pushReplacement(MaterialPageRoute(builder: (context) => OkScreen()));
   }
 
-  void _onFail(){
-    _scaffoldKey.currentState.showSnackBar(
-        SnackBar(content: Text("Falha ao criar usuário!"),
-          backgroundColor: Colors.redAccent,
-          duration: Duration(seconds: 2),
-        )
-    );
+  void _onFail() {
+    _scaffoldKey.currentState.showSnackBar(SnackBar(
+      content: Text("Falha ao criar usuário!"),
+      backgroundColor: Colors.redAccent,
+      duration: Duration(seconds: 2),
+    ));
   }
-
 }
-

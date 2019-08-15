@@ -22,7 +22,8 @@ class QrScanState extends State<QrScan> {
   String error = "";
   String nome="";
   String _numeroSerie = "";
-  String _results ="";
+  Query _results = Firestore.instance.collection('armarios');
+
 
   @override
   Widget build(BuildContext context) {
@@ -101,23 +102,31 @@ class QrScanState extends State<QrScan> {
 
   void SalvarMensagem() async {
 
-    final connection = await MySqlConnection.connect(new ConnectionSettings(
+ /*   final connection = await MySqlConnection.connect(new ConnectionSettings(
       host: '127.0.0.1',
       port: 3306,
       user: 'root',
       password: 'admin',
       db: 'armariosinteligentes',
-    ));
+    )); */
 
     this._status = _status;
     _numeroSerie = _status.substring(48,80);
-    _results = (await connection.query('select id_armario from armarios where numero_serie = $_numeroSerie')) as String;
+  // _results = (await connection.query('select id_armario from armarios where numero_serie = $_numeroSerie')) as String;
+  //  _results = _results.where('numero_serie', isEqualTo: _numeroSerie);
     await Firestore.instance
         .collection("lockers")
         .document()
-        .setData({"QR Code": "Armario 0000" + _results });
+        .setData({"QR Code": _numeroSerie });
 
-    await connection.close();
+    /*   await Firestore.instance
+        .collection("armarios")
+        .where("numero_serie", isEqualTo: _numeroSerie)
+        .orderBy("id_armario")
+        .getDocuments();
+*/
+
+   // await connection.close();
   }
 
   void telaInicial() {
