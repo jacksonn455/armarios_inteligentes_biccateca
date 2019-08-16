@@ -22,7 +22,8 @@ class QrScanState extends State<QrScan> {
   String error = "";
   String nome="";
   String _numeroSerie = "";
-  Query _results = Firestore.instance.collection('armarios');
+  String _teste = "";
+
 
 
   @override
@@ -43,7 +44,7 @@ class QrScanState extends State<QrScan> {
               height: 350,
               width: 300,
               child: FlareActor(
-                "assets/Locker4.flr",
+                "assets/Locker5.flr",
                 animation: "scan",
               ),
             ),
@@ -112,12 +113,13 @@ class QrScanState extends State<QrScan> {
 
     this._status = _status;
     _numeroSerie = _status.substring(48,80);
-  // _results = (await connection.query('select id_armario from armarios where numero_serie = $_numeroSerie')) as String;
-  //  _results = _results.where('numero_serie', isEqualTo: _numeroSerie);
+     _teste = Firestore.instance.collection("armarios")
+         .where("numero_serie",  isEqualTo:  _numeroSerie).getDocuments() as String;
+
     await Firestore.instance
-        .collection("lockers")
+        .collection("armarios")
         .document()
-        .setData({"QR Code": _numeroSerie });
+        .setData({"numero_serie": _numeroSerie});
 
     /*   await Firestore.instance
         .collection("armarios")

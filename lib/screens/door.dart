@@ -1,11 +1,12 @@
 import 'package:armarios_inteligentes/models/user_model.dart';
 import 'package:armarios_inteligentes/screens/NewLogin_screen.dart';
 import 'package:armarios_inteligentes/screens/home_screen.dart';
+import 'package:armarios_inteligentes/screens/locker_screen.dart';
 import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
 import 'package:scoped_model/scoped_model.dart';
 
-class OkScreen extends StatelessWidget {
+class DoorScreen extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -41,10 +42,14 @@ class _SplashState extends State<Splash> {
                 height: 15,
               ),
               Container(
-                height: 340,
-                width: 340,
-                child: FlareActor("assets/ok4.flr", animation: "certo",),
+                height: 300,
+                width: 300,
+                child: FlareActor("assets/door.flr", animation: "open",),
               ),
+              SizedBox(
+                height: 30,
+              ),
+              Text("Abrindo porta ...", textAlign: TextAlign.center, style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),)
             ],
           ),
         ),
@@ -57,7 +62,7 @@ class _SplashState extends State<Splash> {
     super.initState();
     Future.delayed(Duration(milliseconds: 1700)).then((_) {
       Navigator.of(context).pushReplacement(
-          MaterialPageRoute(builder: (context) => NewLoginScreen()));
+          MaterialPageRoute(builder: (context) => LockerScreen()));
     });
   }
 }

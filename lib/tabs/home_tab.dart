@@ -36,7 +36,7 @@ class HomeTab extends StatelessWidget {
         Container(
           padding: EdgeInsets.only(top: 55),
           child: FutureBuilder<QuerySnapshot>(
-            future: Firestore.instance.collection("lockers").getDocuments(),
+            future: Firestore.instance.collection("armarios").getDocuments(),
             builder: (context, snapshot) {
               if (!snapshot.hasData)
                 return Center(
@@ -61,3 +61,4 @@ class HomeTab extends StatelessWidget {
     );
   }
 }
+
