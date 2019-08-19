@@ -19,7 +19,7 @@ class RoutinesScreen extends StatelessWidget {
           ListTile(
             leading: CircleAvatar(
               backgroundColor: Colors.transparent,
-              backgroundImage: AssetImage("images/padrao.jpg"),
+              backgroundImage: AssetImage("images/ocupacao.png"),
             ),
             title: Text("Ocupação"),
             onTap: () {},
@@ -28,7 +28,7 @@ class RoutinesScreen extends StatelessWidget {
           ListTile(
             leading: CircleAvatar(
               backgroundColor: Colors.transparent,
-              backgroundImage: AssetImage("images/qrcode.png"),
+              backgroundImage: AssetImage("images/user.png"),
             ),
             title: Text("Usuários"),
             onTap: () {},
@@ -51,7 +51,7 @@ class RoutinesScreen extends StatelessWidget {
           ListTile(
             leading: CircleAvatar(
               backgroundColor: Colors.transparent,
-              backgroundImage: AssetImage("images/qrcode.png"),
+              backgroundImage: AssetImage("images/porta.png"),
             ),
             title: Text("Abrir Todas as Portas"),
             onTap: () {},

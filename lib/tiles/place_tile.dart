@@ -4,9 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class PlaceTile extends StatelessWidget {
-  final DocumentSnapshot snapshot;
-
-  PlaceTile(this.snapshot);
 
   @override
   Widget build(BuildContext context) {
@@ -28,27 +25,27 @@ class PlaceTile extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Text(
-                  snapshot.data["title"],
+                  "Wtec Móveis e Equipamentos Técnicos Ltda",
                   textAlign: TextAlign.start,
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16.0),
                 ),
                 Text(
-                  snapshot.data["address"],
+                  "Rua Salomão Ioschpe, 267",
                   textAlign: TextAlign.start,
                   style: TextStyle(fontSize: 15.0),
                 ),
                 Text(
-                  snapshot.data["city"],
+                 "Erechim - RS",
                   textAlign: TextAlign.start,
                   style: TextStyle(color: Colors.grey[500], fontSize: 15.0),
                 ),
                 Text(
-                  snapshot.data["cep"],
+                 "CEP: 99706-339",
                   textAlign: TextAlign.start,
                   style: TextStyle(fontSize: 15.0),
                 ),
                 Text(
-                  snapshot.data["contact"],
+                  "+55 (54) 3522-4344",
                   textAlign: TextAlign.start,
                   style: TextStyle(fontSize: 15.0),
                 )
@@ -64,8 +61,8 @@ class PlaceTile extends StatelessWidget {
                 padding: EdgeInsets.zero,
                 onPressed: () {
                   launch(
-                      "https://www.google.com/maps/search/?api=1&query=${snapshot.data["lat"]},"
-                          "${snapshot.data["long"]}");
+                      "https://www.google.com/maps/search/?api=1&query=-27.654616,"
+                          "-52.247418");
                 },
               ),
               FlatButton(
@@ -73,7 +70,7 @@ class PlaceTile extends StatelessWidget {
                 textColor: Colors.lightBlueAccent,
                 padding: EdgeInsets.zero,
                 onPressed: () {
-                  launch("tel:${snapshot.data["phone"]}");
+                  launch("tel:(54)3522-4344");
                 },
               ),
             ],
@@ -84,7 +81,7 @@ class PlaceTile extends StatelessWidget {
               backgroundColor: Colors.transparent,
               backgroundImage: AssetImage("images/instagram.png"),
             ),
-            title: Text(snapshot.data["txtInsta"],style: TextStyle(fontWeight: FontWeight.w500),),
+            title: Text("Instagram",style: TextStyle(fontWeight: FontWeight.w500),),
             onTap: (){
               launch(
                   "https://www.instagram.com/biccateca/?hl=pt-br");
@@ -96,7 +93,7 @@ class PlaceTile extends StatelessWidget {
               backgroundColor: Colors.transparent,
               backgroundImage: AssetImage("images/facebook.png"),
             ),
-            title: Text(snapshot.data["txtFace"],style: TextStyle(fontWeight: FontWeight.w500),),
+            title: Text("Facebook",style: TextStyle(fontWeight: FontWeight.w500),),
             onTap: (){
               launch(
                   "https://www.facebook.com/Biccateca/");
@@ -108,7 +105,7 @@ class PlaceTile extends StatelessWidget {
               backgroundColor: Colors.transparent,
               backgroundImage:AssetImage("images/youtube.png"),
             ),
-            title: Text(snapshot.data["txtYoutube"],style: TextStyle(fontWeight: FontWeight.w500),),
+            title: Text("Youtube",style: TextStyle(fontWeight: FontWeight.w500),),
             onTap: (){
               launch(
                   "https://www.youtube.com/user/Biccateca");

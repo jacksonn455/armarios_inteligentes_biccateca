@@ -1,6 +1,6 @@
+import 'package:armarios_inteligentes/screens/politica.dart';
 import 'package:armarios_inteligentes/tabs/home_tab.dart';
-import 'package:armarios_inteligentes/tabs/places_tab.dart';
-import 'package:armarios_inteligentes/tabs/preference_tab.dart';
+import 'package:armarios_inteligentes/tiles/place_tile.dart';
 import 'package:armarios_inteligentes/widgets/custom_drawer.dart';
 import 'package:flutter/material.dart';
 
@@ -27,7 +27,7 @@ class HomeScreen extends StatelessWidget {
             centerTitle: true,
           ),
           drawer: CustomDrawer(_pageController),
-          body: PreferenceTab(),
+          body: PoliticaScreen(),
         //  floatingActionButton: CartButton(),
         ),
         Scaffold(
@@ -36,7 +36,7 @@ class HomeScreen extends StatelessWidget {
             title: Text("Sobre"),
             centerTitle: true,
           ),
-          body: PlacesTab(),
+          body: PlaceTile(),
           drawer: CustomDrawer(_pageController),
         ),
       ],
