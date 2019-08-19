@@ -48,11 +48,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         Column(
                           children: <Widget>[
                             Padding(
-                              padding: EdgeInsets.only(top: 10.0),
+                              padding: EdgeInsets.only(top: 30),
                               child: Image.asset(
                                 "images/logo2.png",
                                 width: 200,
-                                height: 200,
+                                height: 150,
                                 fit: BoxFit.contain,
                               ),
                             ),
@@ -78,7 +78,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               },
                             ),
                             SizedBox(
-                              height: 16.0,
+                              height: 10.0,
                             ),
                             TextFormField(
                               style: TextStyle(color: Colors.white),
@@ -104,7 +104,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               },
                             ),
                             SizedBox(
-                              height: 16.0,
+                              height: 10.0,
                             ),
                             TextFormField(
                               style: TextStyle(color: Colors.white),
@@ -130,7 +130,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               },
                             ),
                             SizedBox(
-                              height: 16.0,
+                              height: 10.0,
                             ),
                             TextFormField(
                               style: TextStyle(color: Colors.white),
@@ -154,7 +154,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               },
                             ),
                             SizedBox(
-                              height: 45.0,
+                              height: 30.0,
                             ),
                             SizedBox(
                               height: 40.0,

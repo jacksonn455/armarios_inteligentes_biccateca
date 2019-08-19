@@ -18,5 +18,4 @@ class PreferenceData {
       "description": description,
     };
   }
-
 }

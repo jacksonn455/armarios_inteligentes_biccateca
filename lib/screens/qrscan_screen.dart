@@ -41,7 +41,7 @@ class QrScanState extends State<QrScan> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             Container(
-              height: 350,
+              height: 380,
               width: 300,
               child: FlareActor(
                 "assets/Locker5.flr",
@@ -49,7 +49,7 @@ class QrScanState extends State<QrScan> {
               ),
             ),
             SizedBox(
-              height: 30,
+              height: 20,
             ),
             SizedBox(
               height: 30,
@@ -113,11 +113,11 @@ class QrScanState extends State<QrScan> {
 
     this._status = _status;
     _numeroSerie = _status.substring(48,80);
-     _teste = Firestore.instance.collection("armarios")
-         .where("numero_serie",  isEqualTo:  _numeroSerie).getDocuments() as String;
+    // _teste = Firestore.instance.collection("armarios")
+     //    .where("numero_serie",  isEqualTo:  _numeroSerie).getDocuments() as String;
 
     await Firestore.instance
-        .collection("armarios")
+        .collection("lockers")
         .document()
         .setData({"numero_serie": _numeroSerie});
 

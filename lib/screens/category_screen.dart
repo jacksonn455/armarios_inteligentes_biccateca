@@ -6,8 +6,6 @@ class CategoryScreen extends StatelessWidget {
 
   CategoryScreen(this.snapshot);
 
-
-
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(

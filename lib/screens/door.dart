@@ -2,6 +2,7 @@ import 'package:armarios_inteligentes/models/user_model.dart';
 import 'package:armarios_inteligentes/screens/NewLogin_screen.dart';
 import 'package:armarios_inteligentes/screens/home_screen.dart';
 import 'package:armarios_inteligentes/screens/locker_screen.dart';
+import 'package:armarios_inteligentes/screens/qrscan_screen.dart';
 import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
 import 'package:scoped_model/scoped_model.dart';
@@ -13,21 +14,17 @@ class DoorScreen extends StatelessWidget {
     return ScopedModel<UserModel>(
       model: UserModel(),
       child: MaterialApp(
-          theme: ThemeData(
-            primarySwatch: Colors.blue,
-          ),
-          debugShowCheckedModeBanner: false,
-          home: Splash()),
+          home: SplashD()),
     );
   }
 }
 
-class Splash extends StatefulWidget {
+class SplashD extends StatefulWidget {
   @override
-  _SplashState createState() => _SplashState();
+  _SplashDState createState() => _SplashDState();
 }
 
-class _SplashState extends State<Splash> {
+class _SplashDState extends State<SplashD> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -60,9 +57,11 @@ class _SplashState extends State<Splash> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(Duration(milliseconds: 1700)).then((_) {
-      Navigator.of(context).pushReplacement(
-          MaterialPageRoute(builder: (context) => LockerScreen()));
+    Future.delayed(Duration(milliseconds: 1600)).then((_) {
+      Navigator.push(context,
+          MaterialPageRoute(builder: (context) => HomeScreen()));
+    //  Navigator.push(context,
+    //      MaterialPageRoute(builder: (context) => LockerScreen()));
     });
   }
 }

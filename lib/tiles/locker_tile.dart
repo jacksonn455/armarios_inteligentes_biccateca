@@ -13,7 +13,6 @@ class LockerTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       title: Text("ARMARIO_0000" + snapshot.data["id_armario"], textAlign: TextAlign.justify,),
-
       onTap: (){
         Navigator.of(context).push(
             MaterialPageRoute(builder: (context)=>LockerScreen())

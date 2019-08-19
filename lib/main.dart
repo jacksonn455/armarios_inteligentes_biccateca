@@ -13,14 +13,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScopedModel<UserModel>(
       model: UserModel(),
-        child: MaterialApp(
-        title: 'Armarios Inteligentes',
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-        ),
-        debugShowCheckedModeBanner: false,
-        home:  Splash()
-        ),
+      child: MaterialApp(
+          title: 'Armarios Inteligentes',
+          theme: ThemeData(
+            primarySwatch: Colors.blue,
+          ),
+          debugShowCheckedModeBanner: false,
+          home: Splash()),
     );
   }
 }
@@ -37,7 +36,9 @@ class _SplashState extends State<Splash> {
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("images/splash.jpg"), fit: BoxFit.cover,),
+            image: AssetImage("images/splash.jpg"),
+            fit: BoxFit.cover,
+          ),
         ),
       ),
     );
@@ -47,8 +48,13 @@ class _SplashState extends State<Splash> {
   void initState() {
     super.initState();
     Future.delayed(Duration(seconds: 3)).then((_) {
-      Navigator.of(context).pushReplacement(
-          MaterialPageRoute(builder: (context) => NewLoginScreen()));
+      if (UserModel.of(context).isLoggedIn()) {
+        Navigator.of(context).pushReplacement(
+            MaterialPageRoute(builder: (context) => HomeScreen()));
+      } else {
+        Navigator.of(context).pushReplacement(
+            MaterialPageRoute(builder: (context) => NewLoginScreen()));
+      }
     });
   }
 }

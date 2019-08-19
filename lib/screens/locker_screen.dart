@@ -1,6 +1,8 @@
 import 'package:armarios_inteligentes/screens/door.dart';
+import 'package:armarios_inteligentes/screens/option_screen.dart';
+import 'package:armarios_inteligentes/screens/report_screen.dart';
+import 'package:armarios_inteligentes/screens/routines_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class LockerScreen extends StatefulWidget {
   @override
@@ -106,7 +108,7 @@ class LockerScreenState extends State<LockerScreen> {
             title: Text("Rotinas"),
             onTap: () {
               Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(builder: (context) => LockerScreen()));
+                  MaterialPageRoute(builder: (context) => RoutinesScreen()));
             },
           ),
           Divider(),
@@ -118,7 +120,7 @@ class LockerScreenState extends State<LockerScreen> {
             title: Text("Relatórios"),
             onTap: () {
               Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(builder: (context) => LockerScreen()));
+                  MaterialPageRoute(builder: (context) => ReportScreen()));
             },
           ),
           Divider(),
@@ -130,7 +132,7 @@ class LockerScreenState extends State<LockerScreen> {
             title: Text("Configurações"),
             onTap: () {
               Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(builder: (context) => LockerScreen()));
+                  MaterialPageRoute(builder: (context) => OptionScreen()));
             },
           ),
         ],
