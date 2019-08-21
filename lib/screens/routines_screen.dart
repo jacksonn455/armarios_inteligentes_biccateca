@@ -54,11 +54,43 @@ class RoutinesScreen extends StatelessWidget {
               backgroundImage: AssetImage("images/porta.png"),
             ),
             title: Text("Abrir Todas as Portas"),
-            onTap: () {},
+              onTap: () async {
+                final ConfirmAction action = await _asyncConfirmDialog(context);
+                print("Confirmar $action");
+              },
           ),
           Divider(),
         ],
       ),
     );
   }
+}
+
+enum ConfirmAction { CANCEL, ACCEPT }
+
+Future<ConfirmAction> _asyncConfirmDialog(BuildContext context) async {
+  return showDialog<ConfirmAction>(
+    context: context,
+    barrierDismissible: false, // user must tap button for close dialog!
+    builder: (BuildContext context) {
+      return AlertDialog(
+        title: Text('Confirmar',textAlign: TextAlign.center,),
+        content: const Text('Tem certeza que deseja abrir todas as portas ?', textAlign: TextAlign.center,),
+        actions: <Widget>[
+          FlatButton(
+            child: const Text('Sim',textAlign: TextAlign.center,),
+            onPressed: () {
+
+            },
+          ),
+          FlatButton(
+            child: const Text('Não',textAlign: TextAlign.center,),
+            onPressed: () {
+              Navigator.of(context).pop(ConfirmAction.CANCEL);
+            },
+          ),
+        ],
+      );
+    },
+  );
 }

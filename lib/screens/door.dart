@@ -7,6 +7,7 @@ import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
 import 'package:scoped_model/scoped_model.dart';
 
+
 class DoorScreen extends StatelessWidget {
   // This widget is the root of your application.
   @override
@@ -25,6 +26,7 @@ class SplashD extends StatefulWidget {
 }
 
 class _SplashDState extends State<SplashD> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,7 +48,7 @@ class _SplashDState extends State<SplashD> {
               SizedBox(
                 height: 30,
               ),
-              Text("Abrindo porta ...", textAlign: TextAlign.center, style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),)
+              Text("Abrindo porta ...", textAlign: TextAlign.center, style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),),
             ],
           ),
         ),
@@ -65,3 +67,4 @@ class _SplashDState extends State<SplashD> {
     });
   }
 }
+

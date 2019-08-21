@@ -1,8 +1,32 @@
+import 'dart:io';
 import 'package:armarios_inteligentes/screens/door.dart';
 import 'package:armarios_inteligentes/screens/option_screen.dart';
 import 'package:armarios_inteligentes/screens/report_screen.dart';
 import 'package:armarios_inteligentes/screens/routines_screen.dart';
+import 'package:armarios_inteligentes/widgets/tempoStamp.dart';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+import 'dart:async';
+import 'dart:convert';
+import 'package:crypto/crypto.dart';
+
+const request ="https://armariosinteligentes.com/api/v3/timestamp";
+
+  timeStamp() async {
+  final response =
+  await http.get('http://armariosinteligentes.com/api/v3/timestamp');
+
+  if (response.statusCode == 200) {
+    // If server returns an OK response, parse the JSON.
+    var jsonResponse = json.decode(response.body);
+    tempoStamp tempo = new tempoStamp.fromJson(jsonResponse);
+    var time = ('${tempo.timestamp}');
+    print(time);
+  } else {
+    // If that response was not OK, throw an error.
+    throw Exception('Failed to load post');
+  }
+}
 
 class LockerScreen extends StatefulWidget {
   @override
@@ -107,8 +131,10 @@ class LockerScreenState extends State<LockerScreen> {
             ),
             title: Text("Rotinas"),
             onTap: () {
+              timeStamp();
+              /*
               Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(builder: (context) => RoutinesScreen()));
+                  MaterialPageRoute(builder: (context) => RoutinesScreen()));*/
             },
           ),
           Divider(),
@@ -149,18 +175,30 @@ Future<ConfirmAction> _asyncConfirmDialog(BuildContext context) async {
     barrierDismissible: false, // user must tap button for close dialog!
     builder: (BuildContext context) {
       return AlertDialog(
-        title: Text('Confirmar',textAlign: TextAlign.center,),
-        content: const Text('Tem certeza que deseja abrir a porta ?', textAlign: TextAlign.center,),
+        title: Text(
+          'Confirmar',
+          textAlign: TextAlign.center,
+        ),
+        content: const Text(
+          'Tem certeza que deseja abrir a porta ?',
+          textAlign: TextAlign.center,
+        ),
         actions: <Widget>[
           FlatButton(
-            child: const Text('Sim',textAlign: TextAlign.center,),
+            child: const Text(
+              'Sim',
+              textAlign: TextAlign.center,
+            ),
             onPressed: () {
               Navigator.of(context).pushReplacement(
                   MaterialPageRoute(builder: (context) => DoorScreen()));
             },
           ),
           FlatButton(
-            child: const Text('Não',textAlign: TextAlign.center,),
+            child: const Text(
+              'Não',
+              textAlign: TextAlign.center,
+            ),
             onPressed: () {
               Navigator.of(context).pop(ConfirmAction.CANCEL);
             },
@@ -169,4 +207,46 @@ Future<ConfirmAction> _asyncConfirmDialog(BuildContext context) async {
       );
     },
   );
+}
+
+
+
+_getUserApi(String endereco, String deviceId,
+    String clientId, String timeStamp, String clientSecret) async {
+
+  String comando = "/dispositivo/" + deviceId + "/" + endereco + "?client_id="
+      + clientId + "&timestamp=" + timeStamp;
+
+  String secret = clientSecret;
+  String message = comando;
+  List<int> secretBytes = utf8.encode(secret);
+  List<int> messageBytes = utf8.encode(message);
+
+  var hmacSha256 = new Hmac(sha256, secretBytes); // HMAC-SHA256
+  String assinatura = hmacSha256.convert(messageBytes) as String;
+
+  // hash => 669d504045f164593fc73446aff102e97075dcae3edccaa666600fbe9ec1eb0c
+
+  var httpClient = new HttpClient();
+  var uri = new Uri.https('https://armariosinteligentes.com/api', '/v2' + comando + "&signature=" + assinatura);
+  var request = await httpClient.getUrl(uri);
+  var response = await request.close();
+  var responseBody = await response.transform(utf8.decoder).join();
+
+  print(response.statusCode);
+
+  if (response.statusCode == 200) {
+   print(responseBody);
+    // se o servidor retornar um response OK, vamos fazer o parse no JSON
+
+  } else {
+    // se a responsta não for OK , lançamos um erro
+    throw Exception('Failed to load post');
+  }
+
+}
+info() {
+  return _getUserApi("info", "2F60DDB1F246641DC15A2EDD629ACCD4",
+      "396b8f007f73124631105c1c81c4bd89", timeStamp(),
+      "7e2cc5ee9ee2021cb6752052fdfd8730");
 }
