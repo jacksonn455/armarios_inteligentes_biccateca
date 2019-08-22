@@ -10,23 +10,6 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:crypto/crypto.dart';
 
-const request ="https://armariosinteligentes.com/api/v3/timestamp";
-
-  timeStamp() async {
-  final response =
-  await http.get('http://armariosinteligentes.com/api/v3/timestamp');
-
-  if (response.statusCode == 200) {
-    // If server returns an OK response, parse the JSON.
-    var jsonResponse = json.decode(response.body);
-    tempoStamp tempo = new tempoStamp.fromJson(jsonResponse);
-    var time = ('${tempo.timestamp}');
-    print(time);
-  } else {
-    // If that response was not OK, throw an error.
-    throw Exception('Failed to load post');
-  }
-}
 
 class LockerScreen extends StatefulWidget {
   @override
@@ -37,7 +20,7 @@ class LockerScreen extends StatefulWidget {
 
 class LockerScreenState extends State<LockerScreen> {
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context){
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -131,7 +114,7 @@ class LockerScreenState extends State<LockerScreen> {
             ),
             title: Text("Rotinas"),
             onTap: () {
-              timeStamp();
+             info();
               /*
               Navigator.of(context).pushReplacement(
                   MaterialPageRoute(builder: (context) => RoutinesScreen()));*/
@@ -209,44 +192,101 @@ Future<ConfirmAction> _asyncConfirmDialog(BuildContext context) async {
   );
 }
 
+  Future timeStamp() async {
+  final response = await http.get('http://armariosinteligentes.com/api/v3/timestamp');
 
+  if (response.statusCode == 200) {
+    // If server returns an OK response, parse the JSON.
+    var jsonResponse = json.decode(response.body);
+    tempoStamp tempo = new tempoStamp.fromJson(jsonResponse);
+    String time = ('${tempo.timestamp}');
+    return time;
+  } else {
+    // If that response was not OK, throw an error.
+    throw Exception('Failed to load post');
+  }
+}
 
-_getUserApi(String endereco, String deviceId,
-    String clientId, String timeStamp, String clientSecret) async {
+  Mypost(String endereco, String deviceId, String clientId,   String clientSecret, var parametro1, var parametro2) async {
+  var time = await timeStamp();
+  String comando = "/dispositivo/" + deviceId + "/" + endereco + "?"
+      + parametro1 + "=" + parametro2 + "&client_id=" + clientId +
+      "&timestamp=" + time.toString();
+
+  var key = utf8.encode(clientSecret);
+  var bytes = utf8.encode(comando);
+  var hmacSha256 = new Hmac(sha256, key); // HMAC-SHA256
+  var assinatura = hmacSha256.convert(bytes).toString().toLowerCase();
+
+    Map<String, String> headers = {
+      'Content-Type': 'application/x-www-form-urlencoded',
+    };
+    Map<String, String> body = {
+      parametro1: parametro2,
+    };
+
+    String url = "https://armariosinteligentes.com/api/v2" + comando +
+        "&signature=" + assinatura;
+
+    final response =
+    await http.post(url,body: body,);
+    final responseJson = json.decode(response.body);
+
+    print(response.statusCode);
+
+    if (response.statusCode == 200) {
+      // If server returns an OK response, parse the JSON.
+      print(responseJson);
+    } else {
+      print(responseJson);
+    }
+  }
+
+Myget(String endereco, String deviceId,
+    String clientId,   String clientSecret) async {
+
+  var time = await timeStamp();
 
   String comando = "/dispositivo/" + deviceId + "/" + endereco + "?client_id="
-      + clientId + "&timestamp=" + timeStamp;
+      + clientId + "&timestamp=" + time.toString();
 
-  String secret = clientSecret;
-  String message = comando;
-  List<int> secretBytes = utf8.encode(secret);
-  List<int> messageBytes = utf8.encode(message);
 
-  var hmacSha256 = new Hmac(sha256, secretBytes); // HMAC-SHA256
-  String assinatura = hmacSha256.convert(messageBytes) as String;
+  var key = utf8.encode(clientSecret);
+  var bytes = utf8.encode(comando);
 
-  // hash => 669d504045f164593fc73446aff102e97075dcae3edccaa666600fbe9ec1eb0c
+  var hmacSha256 = new Hmac(sha256, key); // HMAC-SHA256
+  var assinatura = hmacSha256.convert(bytes).toString();
 
-  var httpClient = new HttpClient();
-  var uri = new Uri.https('https://armariosinteligentes.com/api', '/v2' + comando + "&signature=" + assinatura);
-  var request = await httpClient.getUrl(uri);
-  var response = await request.close();
-  var responseBody = await response.transform(utf8.decoder).join();
+  Map<String, String> headers = {
+    'Content-Type': 'application/x-www-form-urlencoded',
+  };
+
+
+  String url = "https://armariosinteligentes.com/api/v2" + comando +
+      "&signature=" + assinatura;
+
+  final response =
+  await http.post(url,headers: headers);
+  final responseJson = json.decode(response.body);
 
   print(response.statusCode);
 
   if (response.statusCode == 200) {
-   print(responseBody);
-    // se o servidor retornar um response OK, vamos fazer o parse no JSON
-
+    // If server returns an OK response, parse the JSON.
+    print(responseJson);
   } else {
-    // se a responsta não for OK , lançamos um erro
-    throw Exception('Failed to load post');
+    print(responseJson);
   }
-
 }
-info() {
-  return _getUserApi("info", "2F60DDB1F246641DC15A2EDD629ACCD4",
-      "396b8f007f73124631105c1c81c4bd89", timeStamp(),
+
+info() async {
+  return Myget ("info", "0C738F996163C4B625D11E971B3C4E18",
+      "396b8f007f73124631105c1c81c4bd89",
       "7e2cc5ee9ee2021cb6752052fdfd8730");
+}
+
+reiniciar() async {
+  return Mypost ("reiniciar", "0C738F996163C4B625D11E971B3C4E18",
+      "396b8f007f73124631105c1c81c4bd89",
+      "7e2cc5ee9ee2021cb6752052fdfd8730","","");
 }
