@@ -1,5 +1,7 @@
 import 'package:armarios_inteligentes/models/user_model.dart';
 import 'package:armarios_inteligentes/screens/NewLogin_screen.dart';
+import 'package:armarios_inteligentes/screens/locker_screen.dart';
+import 'package:armarios_inteligentes/screens/option_screen.dart';
 import 'package:barcode_scan/barcode_scan.dart';
 import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
@@ -22,10 +24,15 @@ class QrScreenState extends State<QrScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
+      appBar: new AppBar(
         backgroundColor: Colors.lightBlueAccent,
         title: Text('QR Code'),
         centerTitle: true,
+        leading: new IconButton(
+          icon: new Icon(Icons.arrow_back),
+          onPressed: () => Navigator.of(context)
+              .pushReplacement(MaterialPageRoute(builder: (context) => OptionScreen())),
+        ),
       ),
       body: Container(
         child: Column(

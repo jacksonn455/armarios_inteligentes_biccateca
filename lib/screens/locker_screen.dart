@@ -11,9 +11,6 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:crypto/crypto.dart';
 
-
-request consumo = new request();
-
 class LockerScreen extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
@@ -23,7 +20,7 @@ class LockerScreen extends StatefulWidget {
 
 class LockerScreenState extends State<LockerScreen> {
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -79,9 +76,8 @@ class LockerScreenState extends State<LockerScreen> {
             ),
             title: Text("Porta 01"),
             onTap: () async {
-              final ConfirmAction action = await _asyncConfirmDialog(context);
+              final ConfirmAction action = await _asyncPortaUm(context);
               print("Confirmar $action");
-              consumo.abrirportaUm();
             },
           ),
           Divider(),
@@ -92,9 +88,8 @@ class LockerScreenState extends State<LockerScreen> {
             ),
             title: Text("Porta 02"),
             onTap: () async {
-              final ConfirmAction action = await _asyncConfirmDialog(context);
+              final ConfirmAction action = await _asyncPortaDois(context);
               print("Confirmar $action");
-              consumo.abrirportaDois();
             },
           ),
           SizedBox(
@@ -155,7 +150,7 @@ class LockerScreenState extends State<LockerScreen> {
 
 enum ConfirmAction { CANCEL, ACCEPT }
 
-Future<ConfirmAction> _asyncConfirmDialog(BuildContext context) async {
+Future<ConfirmAction> _asyncPortaUm(BuildContext context) async {
   return showDialog<ConfirmAction>(
     context: context,
     barrierDismissible: false, // user must tap button for close dialog!
@@ -166,7 +161,7 @@ Future<ConfirmAction> _asyncConfirmDialog(BuildContext context) async {
           textAlign: TextAlign.center,
         ),
         content: const Text(
-          'Tem certeza que deseja abrir a porta ?',
+          'Tem certeza que deseja abrir a porta 1 ?',
           textAlign: TextAlign.center,
         ),
         actions: <Widget>[
@@ -176,8 +171,52 @@ Future<ConfirmAction> _asyncConfirmDialog(BuildContext context) async {
               textAlign: TextAlign.center,
             ),
             onPressed: () {
+              print("Abrindo porta 1...");
               Navigator.of(context).pushReplacement(
                   MaterialPageRoute(builder: (context) => DoorScreen()));
+              consumo.abrirportaUm();
+            },
+          ),
+          FlatButton(
+            child: const Text(
+              'Não',
+              textAlign: TextAlign.center,
+            ),
+            onPressed: () {
+              Navigator.of(context).pop(ConfirmAction.CANCEL);
+            },
+          ),
+        ],
+      );
+    },
+  );
+}
+
+Future<ConfirmAction> _asyncPortaDois(BuildContext context) async {
+  return showDialog<ConfirmAction>(
+    context: context,
+    barrierDismissible: false, // user must tap button for close dialog!
+    builder: (BuildContext context) {
+      return AlertDialog(
+        title: Text(
+          'Confirmar',
+          textAlign: TextAlign.center,
+        ),
+        content: const Text(
+          'Tem certeza que deseja abrir a porta 2 ?',
+          textAlign: TextAlign.center,
+        ),
+        actions: <Widget>[
+          FlatButton(
+            child: const Text(
+              'Sim',
+              textAlign: TextAlign.center,
+            ),
+            onPressed: () {
+              print("Abrindo porta 2...");
+              Navigator.of(context).pushReplacement(
+                  MaterialPageRoute(builder: (context) => DoorScreen()));
+              consumo.abrirportaDois();
             },
           ),
           FlatButton(

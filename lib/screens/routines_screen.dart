@@ -1,17 +1,28 @@
+import 'package:armarios_inteligentes/screens/locker_screen.dart';
+import 'package:armarios_inteligentes/screens/ocup_screen.dart';
+import 'package:armarios_inteligentes/screens/user_screen.dart';
 import 'package:armarios_inteligentes/widgets/request.dart';
 import 'package:flutter/material.dart';
 
 request consumo = new request();
 
 class RoutinesScreen extends StatelessWidget {
+
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
+      appBar: new AppBar(
         backgroundColor: Colors.lightBlueAccent,
         title: Text('Rotinas'),
         centerTitle: true,
+        leading: new IconButton(
+          icon: new Icon(Icons.arrow_back),
+          onPressed: () => Navigator.of(context)
+              .pushReplacement(MaterialPageRoute(builder: (context) => LockerScreen())),
+        ),
       ),
       body: ListView(
         padding: EdgeInsets.all(8.0),
@@ -25,7 +36,10 @@ class RoutinesScreen extends StatelessWidget {
               backgroundImage: AssetImage("images/ocupacao.png"),
             ),
             title: Text("Ocupação"),
-            onTap: () {},
+            onTap: () {
+              Navigator.of(context)
+                  .pushReplacement(MaterialPageRoute(builder: (context) => OcupScreen()));
+            },
           ),
           Divider(),
           ListTile(
@@ -34,7 +48,10 @@ class RoutinesScreen extends StatelessWidget {
               backgroundImage: AssetImage("images/user.png"),
             ),
             title: Text("Usuários"),
-            onTap: () {},
+            onTap: () {
+              Navigator.of(context)
+                  .pushReplacement(MaterialPageRoute(builder: (context) => UserScreen()));
+            },
           ),
           SizedBox(
             child: Container(
@@ -57,10 +74,10 @@ class RoutinesScreen extends StatelessWidget {
               backgroundImage: AssetImage("images/porta.png"),
             ),
             title: Text("Abrir Todas as Portas"),
-              onTap: () async {
-                final ConfirmAction action = await _asyncConfirmDialog(context);
-                print("Confirmar $action");
-              },
+            onTap: () async {
+              final ConfirmAction action = await _asyncConfirmDialog(context);
+              print("Confirmar $action");
+            },
           ),
           Divider(),
         ],
@@ -77,18 +94,30 @@ Future<ConfirmAction> _asyncConfirmDialog(BuildContext context) async {
     barrierDismissible: false, // user must tap button for close dialog!
     builder: (BuildContext context) {
       return AlertDialog(
-        title: Text('Confirmar',textAlign: TextAlign.center,),
-        content: const Text('Tem certeza que deseja abrir todas as portas ?', textAlign: TextAlign.center,),
+        title: Text(
+          'Confirmar',
+          textAlign: TextAlign.center,
+        ),
+        content: const Text(
+          'Tem certeza que deseja abrir todas as portas ?',
+          textAlign: TextAlign.center,
+        ),
         actions: <Widget>[
           FlatButton(
-            child: const Text('Sim',textAlign: TextAlign.center,),
+            child: const Text(
+              'Sim',
+              textAlign: TextAlign.center,
+            ),
             onPressed: () {
-            consumo.abrirTodasAsPortas();
-            Navigator.of(context).pop(ConfirmAction.CANCEL);
+              consumo.abrirTodasAsPortas();
+              Navigator.of(context).pop(ConfirmAction.CANCEL);
             },
           ),
           FlatButton(
-            child: const Text('Não',textAlign: TextAlign.center,),
+            child: const Text(
+              'Não',
+              textAlign: TextAlign.center,
+            ),
             onPressed: () {
               Navigator.of(context).pop(ConfirmAction.CANCEL);
             },

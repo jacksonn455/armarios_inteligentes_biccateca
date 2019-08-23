@@ -113,14 +113,14 @@ class request {
   }
 
   nome() async {
-    return Myget("nome", "0C738F996163C4B625D11E971B3C4E18",
+    return Myget("nome", "9ECA47B41682B1317D053713582BA8AC",
         "396b8f007f73124631105c1c81c4bd89", "7e2cc5ee9ee2021cb6752052fdfd8730");
   }
 
   abrirportaUm() async {
     return Mypost(
         "abrirporta",
-        "0C738F996163C4B625D11E971B3C4E18",
+        "9ECA47B41682B1317D053713582BA8AC",
         "396b8f007f73124631105c1c81c4bd89",
         "7e2cc5ee9ee2021cb6752052fdfd8730",
         "numero",
@@ -130,7 +130,7 @@ class request {
   abrirportaDois() async {
     return Mypost(
         "abrirporta",
-        "0C738F996163C4B625D11E971B3C4E18",
+        "9ECA47B41682B1317D053713582BA8AC",
         "396b8f007f73124631105c1c81c4bd89",
         "7e2cc5ee9ee2021cb6752052fdfd8730",
         "numero",
@@ -140,7 +140,7 @@ class request {
   reiniciar() async {
     return Mypost(
         "reiniciar",
-        "2F60DDB1F246641DC15A2EDD629ACCD4",
+        "9ECA47B41682B1317D053713582BA8AC",
         "396b8f007f73124631105c1c81c4bd89",
         "7e2cc5ee9ee2021cb6752052fdfd8730",
         "",
@@ -150,7 +150,7 @@ class request {
   padraoDeFabrica() async {
     return Mypost(
         "padraodefabrica",
-        "0B6389406212A0E14D50D7A7DB8D6EE6",
+        "9ECA47B41682B1317D053713582BA8AC",
         "396b8f007f73124631105c1c81c4bd89",
         "7e2cc5ee9ee2021cb6752052fdfd8730",
         "",
@@ -160,7 +160,7 @@ class request {
   reconfigurar() async {
     return Mypost(
         "reconfigurar",
-        "2F60DDB1F246641DC15A2EDD629ACCD4",
+        "9ECA47B41682B1317D053713582BA8AC",
         "396b8f007f73124631105c1c81c4bd89",
         "7e2cc5ee9ee2021cb6752052fdfd8730",
         "",
@@ -170,7 +170,7 @@ class request {
   atualizar() async {
     return Mypost(
         "atualizar",
-        "0B6389406212A0E14D50D7A7DB8D6EE6",
+        "9ECA47B41682B1317D053713582BA8AC",
         "396b8f007f73124631105c1c81c4bd89",
         "7e2cc5ee9ee2021cb6752052fdfd8730",
         "",
@@ -180,7 +180,7 @@ class request {
   alterarIpsPermitidos() async {
     return Mypost(
         "alteraripspermitidos",
-        "0B6389406212A0E14D50D7A7DB8D6EE6",
+        "9ECA47B41682B1317D053713582BA8AC",
         "396b8f007f73124631105c1c81c4bd89",
         "7e2cc5ee9ee2021cb6752052fdfd8730",
         "endereco",
@@ -190,7 +190,7 @@ class request {
   situacaoPortaUm() async {
     return Mypost(
         "situacaoporta",
-        "2F60DDB1F246641DC15A2EDD629ACCD4",
+        "9ECA47B41682B1317D053713582BA8AC",
         "396b8f007f73124631105c1c81c4bd89",
         "7e2cc5ee9ee2021cb6752052fdfd8730",
         "numero",
@@ -200,7 +200,7 @@ class request {
   situacaoPortaDois() async {
     return Mypost(
         "situacaoporta",
-        "2F60DDB1F246641DC15A2EDD629ACCD4",
+        "9ECA47B41682B1317D053713582BA8AC",
         "396b8f007f73124631105c1c81c4bd89",
         "7e2cc5ee9ee2021cb6752052fdfd8730",
         "numero",
@@ -210,7 +210,7 @@ class request {
   alterarNumeracaoIncial() async {
     return Mypost(
         "alterarnumeracaoinicial",
-        "0B6389406212A0E14D50D7A7DB8D6EE6",
+        "9ECA47B41682B1317D053713582BA8AC",
         "396b8f007f73124631105c1c81c4bd89",
         "7e2cc5ee9ee2021cb6752052fdfd8730",
         "numeracaoinicial",
@@ -220,7 +220,7 @@ class request {
   abrirTodasAsPortas() async {
     return Mypost(
         "abrirtodasasportas",
-        "0B6389406212A0E14D50D7A7DB8D6EE6",
+        "9ECA47B41682B1317D053713582BA8AC",
         "396b8f007f73124631105c1c81c4bd89",
         "7e2cc5ee9ee2021cb6752052fdfd8730",
         "",
@@ -228,82 +228,82 @@ class request {
   }
 
   ip() async {
-    return Myget("ip", "0C738F996163C4B625D11E971B3C4E18",
+    return Myget("ip", "9ECA47B41682B1317D053713582BA8AC",
         "396b8f007f73124631105c1c81c4bd89", "7e2cc5ee9ee2021cb6752052fdfd8730");
   }
 
   info() async {
-    return Myget("info", "0C738F996163C4B625D11E971B3C4E18",
+    return Myget("info", "9ECA47B41682B1317D053713582BA8AC",
         "396b8f007f73124631105c1c81c4bd89", "7e2cc5ee9ee2021cb6752052fdfd8730");
   }
 
   id() async {
-    return Myget("id", "0C738F996163C4B625D11E971B3C4E18",
+    return Myget("id", "9ECA47B41682B1317D053713582BA8AC",
         "396b8f007f73124631105c1c81c4bd89", "7e2cc5ee9ee2021cb6752052fdfd8730");
   }
 
   versao() async {
-    return Myget("versao", "0C738F996163C4B625D11E971B3C4E18",
+    return Myget("versao", "9ECA47B41682B1317D053713582BA8AC",
         "396b8f007f73124631105c1c81c4bd89", "7e2cc5ee9ee2021cb6752052fdfd8730");
   }
 
   mac() async {
-    return Myget("mac", "0C738F996163C4B625D11E971B3C4E18",
+    return Myget("mac", "9ECA47B41682B1317D053713582BA8AC",
         "396b8f007f73124631105c1c81c4bd89", "7e2cc5ee9ee2021cb6752052fdfd8730");
   }
 
   rssi() async {
-    return Myget("rssi", "0C738F996163C4B625D11E971B3C4E18",
+    return Myget("rssi", "9ECA47B41682B1317D053713582BA8AC",
         "396b8f007f73124631105c1c81c4bd89", "7e2cc5ee9ee2021cb6752052fdfd8730");
   }
 
   numeroDePortas() async {
-    return Myget("numerodeportas", "0C738F996163C4B625D11E971B3C4E18",
+    return Myget("numerodeportas", "9ECA47B41682B1317D053713582BA8AC",
         "396b8f007f73124631105c1c81c4bd89", "7e2cc5ee9ee2021cb6752052fdfd8730");
   }
 
   numeracaoInicial() async {
-    return Myget("numeracaoinicial", "0C738F996163C4B625D11E971B3C4E18",
+    return Myget("numeracaoinicial", "9ECA47B41682B1317D053713582BA8AC",
         "396b8f007f73124631105c1c81c4bd89", "7e2cc5ee9ee2021cb6752052fdfd8730");
   }
 
   tipoDeDispositivo() async {
-    return Myget("tipodispositivo", "0C738F996163C4B625D11E971B3C4E18",
+    return Myget("tipodispositivo", "9ECA47B41682B1317D053713582BA8AC",
         "396b8f007f73124631105c1c81c4bd89", "7e2cc5ee9ee2021cb6752052fdfd8730");
   }
 
   tamanhoDoCompartimentos() async {
-    return Myget("tamanhoscompartimentos", "0C738F996163C4B625D11E971B3C4E18",
+    return Myget("tamanhoscompartimentos", "9ECA47B41682B1317D053713582BA8AC",
         "396b8f007f73124631105c1c81c4bd89", "7e2cc5ee9ee2021cb6752052fdfd8730");
   }
 
   compartimentos() async {
-    return Myget("compartimentos", "0C738F996163C4B625D11E971B3C4E18",
+    return Myget("compartimentos", "9ECA47B41682B1317D053713582BA8AC",
         "396b8f007f73124631105c1c81c4bd89", "7e2cc5ee9ee2021cb6752052fdfd8730");
   }
 
   faces() async {
-    return Myget("faces", "0C738F996163C4B625D11E971B3C4E18",
+    return Myget("faces", "9ECA47B41682B1317D053713582BA8AC",
         "396b8f007f73124631105c1c81c4bd89", "7e2cc5ee9ee2021cb6752052fdfd8730");
   }
 
   modulos() async {
-    return Myget("modulos", "0C738F996163C4B625D11E971B3C4E18",
+    return Myget("modulos", "9ECA47B41682B1317D053713582BA8AC",
         "396b8f007f73124631105c1c81c4bd89", "7e2cc5ee9ee2021cb6752052fdfd8730");
   }
 
   portas() async {
-    return Myget("portas", "0C738F996163C4B625D11E971B3C4E18",
+    return Myget("portas", "9ECA47B41682B1317D053713582BA8AC",
         "396b8f007f73124631105c1c81c4bd89", "7e2cc5ee9ee2021cb6752052fdfd8730");
   }
 
   portasAbertas() async {
-    return Myget("portasabertas", "0C738F996163C4B625D11E971B3C4E18",
+    return Myget("portasabertas", "9ECA47B41682B1317D053713582BA8AC",
         "396b8f007f73124631105c1c81c4bd89", "7e2cc5ee9ee2021cb6752052fdfd8730");
   }
 
   wifi() async {
-    return Myget("wifi", "0C738F996163C4B625D11E971B3C4E18",
+    return Myget("wifi", "9ECA47B41682B1317D053713582BA8AC",
         "396b8f007f73124631105c1c81c4bd89", "7e2cc5ee9ee2021cb6752052fdfd8730");
   }
 }

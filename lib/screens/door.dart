@@ -7,15 +7,13 @@ import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
 import 'package:scoped_model/scoped_model.dart';
 
-
 class DoorScreen extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return ScopedModel<UserModel>(
       model: UserModel(),
-      child: MaterialApp(
-          home: SplashD()),
+      child: MaterialApp(home: SplashD()),
     );
   }
 }
@@ -26,7 +24,6 @@ class SplashD extends StatefulWidget {
 }
 
 class _SplashDState extends State<SplashD> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,12 +40,19 @@ class _SplashDState extends State<SplashD> {
               Container(
                 height: 300,
                 width: 300,
-                child: FlareActor("assets/door.flr", animation: "open",),
+                child: FlareActor(
+                  "assets/door.flr",
+                  animation: "open",
+                ),
               ),
               SizedBox(
                 height: 30,
               ),
-              Text("Abrindo porta ...", textAlign: TextAlign.center, style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),),
+              Text(
+                "Abrindo porta ...",
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
+              ),
             ],
           ),
         ),
@@ -60,11 +64,10 @@ class _SplashDState extends State<SplashD> {
   void initState() {
     super.initState();
     Future.delayed(Duration(milliseconds: 1500)).then((_) {
-      Navigator.push(context,
-          MaterialPageRoute(builder: (context) => HomeScreen()));
-    //  Navigator.push(context,
-    //      MaterialPageRoute(builder: (context) => LockerScreen()));
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => HomeScreen()));
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => LockerScreen()));
     });
   }
 }
-
