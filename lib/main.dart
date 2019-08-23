@@ -47,7 +47,7 @@ class _SplashState extends State<Splash> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(Duration(seconds: 3)).then((_) {
+    Future.delayed(Duration(milliseconds: 1200)).then((_) {
       if (UserModel.of(context).isLoggedIn()) {
         Navigator.of(context).pushReplacement(
             MaterialPageRoute(builder: (context) => HomeScreen()));

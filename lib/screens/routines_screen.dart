@@ -1,4 +1,7 @@
+import 'package:armarios_inteligentes/widgets/request.dart';
 import 'package:flutter/material.dart';
+
+request consumo = new request();
 
 class RoutinesScreen extends StatelessWidget {
   @override
@@ -80,7 +83,8 @@ Future<ConfirmAction> _asyncConfirmDialog(BuildContext context) async {
           FlatButton(
             child: const Text('Sim',textAlign: TextAlign.center,),
             onPressed: () {
-
+            consumo.abrirTodasAsPortas();
+            Navigator.of(context).pop(ConfirmAction.CANCEL);
             },
           ),
           FlatButton(

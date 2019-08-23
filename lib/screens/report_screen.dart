@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 
 class ReportScreen extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.lightBlueAccent,
-        title: Text('Relatórios'),
-        centerTitle: true,
-      ),
-      body: ListView(
+      backgroundColor: Colors.lightBlueAccent,
+      title: Text('Relatórios'),
+      centerTitle: true,
+    ),
+    body: ListView(
         padding: EdgeInsets.all(8.0),
         children: <Widget>[
           SizedBox(

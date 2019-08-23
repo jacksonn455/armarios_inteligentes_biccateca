@@ -12,7 +12,10 @@ class LockerTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      title: Text(snapshot.data["id_armario"], textAlign: TextAlign.justify,),
+      title: Text("ARMARIO_0000" + snapshot.data["id_armario"], textAlign: TextAlign.justify, style: TextStyle(fontSize: 15.0),),
+      subtitle: Text('Guarda Volume'),
+      trailing: Icon(Icons.keyboard_arrow_right,),
+      dense: true,
       onTap: (){
         Navigator.of(context).push(
             MaterialPageRoute(builder: (context)=>LockerScreen())

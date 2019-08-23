@@ -1,4 +1,5 @@
 import 'package:armarios_inteligentes/screens/politica.dart';
+import 'package:armarios_inteligentes/screens/report_screen.dart';
 import 'package:armarios_inteligentes/tabs/home_tab.dart';
 import 'package:armarios_inteligentes/tiles/place_tile.dart';
 import 'package:armarios_inteligentes/widgets/custom_drawer.dart';

@@ -59,7 +59,7 @@ class _SplashDState extends State<SplashD> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(Duration(milliseconds: 1600)).then((_) {
+    Future.delayed(Duration(milliseconds: 1500)).then((_) {
       Navigator.push(context,
           MaterialPageRoute(builder: (context) => HomeScreen()));
     //  Navigator.push(context,
