@@ -31,37 +31,40 @@ class LockerScreenState extends State<LockerScreen> {
       body: ListView(
         padding: EdgeInsets.all(8.0),
         children: <Widget>[
-          SizedBox(
-            height: 10.0,
-          ),
-          Text(
-            "Modo de Operação: ",
-            textAlign: TextAlign.justify,
-            style: TextStyle(fontSize: 16.0),
-          ),
-          SizedBox(
-            height: 10.0,
-          ),
+      ListTile(
+        title: Text("Modo de Operação", 
+          textAlign: TextAlign.justify, style: TextStyle(fontSize: 13.0),),
+        trailing: Text("Guarda Volumes", style:  TextStyle(fontSize: 13.0,color: Colors.lightBlueAccent),),
+        dense: true,),
           Divider(),
           SizedBox(
-            height: 10.0,
+            height: 5.0,
           ),
-          Text(
-            "Nível de Acesso: ",
-            textAlign: TextAlign.justify,
-            style: TextStyle(fontSize: 16.0),
-          ),
+          ListTile(
+            title: Text("Tipo de Acesso",
+              textAlign: TextAlign.justify, style: TextStyle(fontSize: 13.0),),
+            trailing: Text("Privado", style:  TextStyle(fontSize: 13.0,color: Colors.lightBlueAccent),),
+            dense: true,),
+          Divider(),
           SizedBox(
-            height: 15.0,
+            height: 5.0,
+          ),
+          ListTile(
+            title: Text("Nivel de Acesso",
+              textAlign: TextAlign.justify, style: TextStyle(fontSize: 13.0),),
+            trailing: Text("Gerente", style:  TextStyle(fontSize: 13.0,color: Colors.lightBlueAccent),),
+            dense: true,),
+          SizedBox(
+            height: 5.0,
           ),
           SizedBox(
             child: Container(
-              height: 35.0,
-              padding: EdgeInsets.all(8.0),
+              height: 30.0,
+              padding: EdgeInsets.all(5.0),
               child: Text(
                 "Meus Compartimentos",
                 style: TextStyle(
-                    fontSize: 16.0,
+                    fontSize: 13.0,
                     color: Colors.white,
                     fontWeight: FontWeight.w500),
                 textAlign: TextAlign.center,
@@ -74,7 +77,9 @@ class LockerScreenState extends State<LockerScreen> {
               backgroundColor: Colors.transparent,
               backgroundImage: AssetImage("images/door.png"),
             ),
-            title: Text("Porta 01"),
+            title: Text("Porta 01",
+              textAlign: TextAlign.justify,
+              style: TextStyle(fontSize: 13.0),),
             onTap: () async {
               final ConfirmAction action = await _asyncPortaUm(context);
               print("Confirmar $action");
@@ -86,7 +91,9 @@ class LockerScreenState extends State<LockerScreen> {
               backgroundColor: Colors.transparent,
               backgroundImage: AssetImage("images/door.png"),
             ),
-            title: Text("Porta 02"),
+            title: Text("Porta 02",
+              textAlign: TextAlign.justify,
+              style: TextStyle(fontSize: 13.0),),
             onTap: () async {
               final ConfirmAction action = await _asyncPortaDois(context);
               print("Confirmar $action");
@@ -94,12 +101,12 @@ class LockerScreenState extends State<LockerScreen> {
           ),
           SizedBox(
             child: Container(
-              height: 35.0,
-              padding: EdgeInsets.all(8.0),
+              height: 30.0,
+              padding: EdgeInsets.all(5.0),
               child: Text(
                 "Opções",
                 style: TextStyle(
-                    fontSize: 16.0,
+                    fontSize: 13.0,
                     color: Colors.white,
                     fontWeight: FontWeight.w500),
                 textAlign: TextAlign.center,
@@ -112,7 +119,9 @@ class LockerScreenState extends State<LockerScreen> {
               backgroundColor: Colors.transparent,
               backgroundImage: AssetImage("images/rotinas2.png"),
             ),
-            title: Text("Rotinas"),
+            title: Text("Rotinas",
+              textAlign: TextAlign.justify,
+              style: TextStyle(fontSize: 13.0),),
             onTap: () {
               Navigator.of(context).pushReplacement(
                   MaterialPageRoute(builder: (context) => RoutinesScreen()));
@@ -124,7 +133,9 @@ class LockerScreenState extends State<LockerScreen> {
               backgroundColor: Colors.transparent,
               backgroundImage: AssetImage("images/relatorio.jpg"),
             ),
-            title: Text("Relatórios"),
+            title: Text("Relatórios",
+              textAlign: TextAlign.justify,
+              style: TextStyle(fontSize: 13.0),),
             onTap: () {
               Navigator.of(context).pushReplacement(
                   MaterialPageRoute(builder: (context) => ReportScreen()));
@@ -136,12 +147,15 @@ class LockerScreenState extends State<LockerScreen> {
               backgroundColor: Colors.transparent,
               backgroundImage: AssetImage("images/configure.jpg"),
             ),
-            title: Text("Configurações"),
+            title: Text("Configurações",
+              textAlign: TextAlign.justify,
+              style: TextStyle(fontSize: 13.0),),
             onTap: () {
               Navigator.of(context).pushReplacement(
                   MaterialPageRoute(builder: (context) => OptionScreen()));
             },
           ),
+          Divider(),
         ],
       ),
     );
