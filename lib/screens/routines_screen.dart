@@ -96,27 +96,28 @@ Future<ConfirmAction> _asyncConfirmDialog(BuildContext context) async {
       return AlertDialog(
         title: Text(
           'Confirmar',
-          textAlign: TextAlign.center,
+          textAlign: TextAlign.justify,
         ),
         content: const Text(
           'Tem certeza que deseja abrir todas as portas ?',
-          textAlign: TextAlign.center,
+          textAlign: TextAlign.justify,
         ),
         actions: <Widget>[
           FlatButton(
             child: const Text(
               'Sim',
-              textAlign: TextAlign.center,
+              textAlign: TextAlign.justify,
             ),
-            onPressed: () {
+            onPressed: () async {
               consumo.abrirTodasAsPortas();
-              Navigator.of(context).pop(ConfirmAction.CANCEL);
+              await Future.delayed(Duration(seconds: 3));
+              await Confirmacao(context);
             },
           ),
           FlatButton(
             child: const Text(
               'Não',
-              textAlign: TextAlign.center,
+              textAlign: TextAlign.justify,
             ),
             onPressed: () {
               Navigator.of(context).pop(ConfirmAction.CANCEL);
@@ -127,3 +128,32 @@ Future<ConfirmAction> _asyncConfirmDialog(BuildContext context) async {
     },
   );
 }
+
+Future Confirmacao(BuildContext context) async {
+  // configura o button
+  Widget okButton = FlatButton(
+    child: Text("OK"),
+    onPressed: () {
+      Navigator.of(context).pop();
+    },
+  );
+  // configura o  AlertDialog
+  AlertDialog alerta = AlertDialog(
+    title: Text(await teste()),
+    actions: [
+      okButton,
+    ],
+  );
+  // exibe o dialog
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return alerta;
+    },
+  );
+}
+Future teste(){
+  var testando = consumo.recebMsg();
+  return testando;
+}
+

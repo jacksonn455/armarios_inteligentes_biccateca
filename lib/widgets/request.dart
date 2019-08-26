@@ -1,3 +1,5 @@
+import 'dart:io';
+import 'package:armarios_inteligentes/json/object_json.dart';
 import 'package:armarios_inteligentes/widgets/tempoStamp.dart';
 import 'package:http/http.dart' as http;
 import 'dart:async';
@@ -5,6 +7,8 @@ import 'dart:convert';
 import 'package:crypto/crypto.dart';
 
 class request {
+  String _msg = "";
+
   Future timeStamp() async {
     final response =
         await http.get('http://armariosinteligentes.com/api/v3/timestamp');
@@ -42,25 +46,13 @@ class request {
     var hmacSha256 = new Hmac(sha256, key); // HMAC-SHA256
     var assinatura = hmacSha256.convert(bytes).toString().toLowerCase();
 
-    Map<String, String> headers = {
-      'Content-Type': 'application/x-www-form-urlencoded',
-    };
-    Map<String, String> body = {
-      parametro1: parametro2,
-    };
-
     String url = "https://armariosinteligentes.com/api/v2" +
         comando +
         "&signature=" +
         assinatura;
 
-    final response = await http.post(
-      url,
-      body: body,
-    );
+    final response = await http.post(url);
     final responseJson = json.decode(response.body);
-
-    print(response.statusCode);
 
     if (response.statusCode == 200) {
       // If server returns an OK response, parse the JSON.
@@ -68,6 +60,36 @@ class request {
     } else {
       print(responseJson);
     }
+
+    if (endereco == "abrirporta") {
+      ObjetoJson portaUm = new ObjetoJson.fromJson(responseJson);
+      _msg = ('${portaUm.mensagem}');
+    }
+    if (endereco == "abrirtodasasportas") {
+      ObjetoJson portaUm = new ObjetoJson.fromJson(responseJson);
+      _msg = ('${portaUm.mensagem}');
+    }
+    if (endereco == "padraodefabrica") {
+      ObjetoJson portaUm = new ObjetoJson.fromJson(responseJson);
+      _msg = ('${portaUm.mensagem}');
+    }
+    if (endereco == "reconfigurar") {
+      ObjetoJson portaUm = new ObjetoJson.fromJson(responseJson);
+      _msg = ('${portaUm.mensagem}');
+    }
+    if (endereco == "reiniciar") {
+      ObjetoJson portaUm = new ObjetoJson.fromJson(responseJson);
+      _msg = ('${portaUm.mensagem}');
+    }
+    if (endereco == "atualizar") {
+      ObjetoJson portaUm = new ObjetoJson.fromJson(responseJson);
+      _msg = ('${portaUm.mensagem}');
+    }
+  }
+
+  Future recebMsg() async {
+    var msg = await _msg;
+    return msg;
   }
 
   Myget(String endereco, String deviceId, String clientId,
@@ -89,20 +111,13 @@ class request {
     var hmacSha256 = new Hmac(sha256, key); // HMAC-SHA256
     var assinatura = hmacSha256.convert(bytes).toString();
 
-    Map<String, String> headers = {
-      'Content-Type': 'application/x-www-form-urlencoded',
-    };
-
     String url = "https://armariosinteligentes.com/api/v2" +
         comando +
         "&signature=" +
         assinatura;
 
-    final response = await http.post(url, headers: headers);
+    final response = await http.post(url);
     final responseJson = json.decode(response.body);
-
-    print(url);
-    print("status do erro: ${response.statusCode}");
 
     if (response.statusCode == 200) {
       // If server returns an OK response, parse the JSON.

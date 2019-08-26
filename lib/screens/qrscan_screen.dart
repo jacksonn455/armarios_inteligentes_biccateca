@@ -16,15 +16,12 @@ class QrScan extends StatefulWidget {
   }
 }
 
-
 class QrScanState extends State<QrScan> {
   String _status = "";
   String error = "";
-  String nome="";
+  String nome = "";
   String _numeroSerie = "";
   String _id = "91";
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -77,12 +74,12 @@ class QrScanState extends State<QrScan> {
             ),
             ScopedModelDescendant<UserModel>(
               builder: (context, child, model) {
-                nome ="${!model.isLoggedIn() ? "" : model.userData["name"]}";
-                if(error == "")
-                  nome = "";
+                nome = "${!model.isLoggedIn() ? "" : model.userData["name"]}";
+                if (error == "") nome = "";
                 return Container(
                   padding: EdgeInsets.symmetric(horizontal: 8.0),
-                  child: Text(nome + error,
+                  child: Text(
+                    nome + error,
                     textAlign: TextAlign.center,
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
@@ -99,14 +96,18 @@ class QrScanState extends State<QrScan> {
   }
 
   void SalvarMensagem() async {
-
     this._status = _status;
-    _numeroSerie = _status.substring(48,80);
+    _numeroSerie = _status.substring(48, 80);
 
+    // ignore: unrelated_type_equality_checks
+    if (Firestore.instance.document("numero_serie").snapshots() == "$_numeroSerie") {
+      print("QR Code ja cadastrado");
+    } else {
       await Firestore.instance
           .collection("lockers")
           .document()
           .setData({"numero_serie": _numeroSerie});
+    }
   }
 
   void telaInicial() {
