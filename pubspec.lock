@@ -99,6 +99,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.1.2"
+  entity:
+    dependency: "direct main"
+    description:
+      name: entity
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.5.0"
   firebase_auth:
     dependency: "direct main"
     description:
@@ -200,6 +207,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.1.6"
+  mime:
+    dependency: transitive
+    description:
+      name: mime
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.9.6+3"
   mysql1:
     dependency: "direct main"
     description:
@@ -242,6 +256,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.4.0"
+  postgresql2:
+    dependency: transitive
+    description:
+      name: postgresql2
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.5.1+1"
   qr:
     dependency: transitive
     description:
@@ -263,6 +284,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.3"
+  rikulo_commons:
+    dependency: transitive
+    description:
+      name: rikulo_commons
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "3.2.1"
   rxdart:
     dependency: "direct main"
     description:

@@ -23,6 +23,8 @@ class QrScanState extends State<QrScan> {
   String _numeroSerie = "";
   String _id = "91";
 
+  QrScanState();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -96,12 +98,20 @@ class QrScanState extends State<QrScan> {
   }
 
   void SalvarMensagem() async {
+    // select id_armarios from armarios where numero_serie = '$_numeroSerie'
+
     this._status = _status;
     _numeroSerie = _status.substring(48, 80);
 
-    // ignore: unrelated_type_equality_checks
-    if (Firestore.instance.document("numero_serie").snapshots() == "$_numeroSerie") {
-      print("QR Code ja cadastrado");
+    final QuerySnapshot result = await Future.value(Firestore.instance
+        .collection("lockers")
+        .where("numero_serie", isEqualTo: "$_numeroSerie")
+        .limit(1)
+        .getDocuments());
+
+    final List<DocumentSnapshot> documents = result.documents;
+    if (documents.length == 1) {
+      confirmacao(context);
     } else {
       await Firestore.instance
           .collection("lockers")
@@ -135,4 +145,29 @@ class QrScanState extends State<QrScan> {
       setState(() => error = ' aconteceu erro desconhecido : $e');
     }
   }
+}
+
+confirmacao(BuildContext context) {
+  // configura o button
+  Widget okButton = FlatButton(
+    child: Text("OK"),
+    onPressed: () {
+      Navigator.of(context)
+          .pushReplacement(MaterialPageRoute(builder: (context) => HomeScreen()));
+      },
+  );
+  // configura o  AlertDialog
+  AlertDialog alerta = AlertDialog(
+    title: Text("QR Code já cadastrado"),
+    actions: [
+      okButton,
+    ],
+  );
+  // exibe o dialog
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return alerta;
+    },
+  );
 }

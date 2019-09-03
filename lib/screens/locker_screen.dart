@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:armarios_inteligentes/screens/about_screen.dart';
 import 'package:armarios_inteligentes/screens/door.dart';
 import 'package:armarios_inteligentes/screens/option_screen.dart';
 import 'package:armarios_inteligentes/screens/report_screen.dart';
@@ -25,13 +26,13 @@ class LockerScreenState extends State<LockerScreen> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.lightBlueAccent,
-        title: Text('Armário'),
+        title: Text('ARMARIO_000079'),
         centerTitle: true,
       ),
       body: ListView(
         padding: EdgeInsets.symmetric(horizontal: 8.0),
         children: <Widget>[
-          ListTile(
+         ListTile(
             title: Text(
               "Modo de Operação:",
               textAlign: TextAlign.justify,
@@ -85,7 +86,7 @@ class LockerScreenState extends State<LockerScreen> {
           ListTile(
             leading: CircleAvatar(
               backgroundColor: Colors.transparent,
-              backgroundImage: AssetImage("images/door.png"),
+              backgroundImage: AssetImage("images/door1.png"),
             ),
             title: Text(
               "Porta 01",
@@ -101,7 +102,7 @@ class LockerScreenState extends State<LockerScreen> {
           ListTile(
             leading: CircleAvatar(
               backgroundColor: Colors.transparent,
-              backgroundImage: AssetImage("images/door.png"),
+              backgroundImage: AssetImage("images/door1.png"),
             ),
             title: Text(
               "Porta 02",
@@ -175,7 +176,36 @@ class LockerScreenState extends State<LockerScreen> {
                   MaterialPageRoute(builder: (context) => OptionScreen()));
             },
           ),
-          Divider(),
+          SizedBox(
+            child: Container(
+              height: 25.0,
+              padding: EdgeInsets.all(5.0),
+              child: Text(
+                "Informações",
+                style: TextStyle(
+                    fontSize: 13.0,
+                    color: Colors.white,
+                    fontWeight: FontWeight.w500),
+                textAlign: TextAlign.center,
+              ),
+              color: Colors.lightBlueAccent,
+            ),
+          ),
+          ListTile(
+            leading: CircleAvatar(
+              backgroundColor: Colors.transparent,
+              backgroundImage: AssetImage("images/about.jpg"),
+            ),
+            title: Text(
+              "Sobre",
+              textAlign: TextAlign.justify,
+              style: TextStyle(fontSize: 13.0),
+            ),
+            onTap: () {
+              Navigator.of(context).pushReplacement(
+                  MaterialPageRoute(builder: (context) => AboutScreen()));
+            },
+          ),
         ],
       ),
     );
@@ -294,3 +324,4 @@ Future teste(){
  var testando = consumo.recebMsg();
   return testando;
 }
+

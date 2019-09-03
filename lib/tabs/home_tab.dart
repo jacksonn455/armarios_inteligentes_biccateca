@@ -36,7 +36,7 @@ class HomeTab extends StatelessWidget {
         Container(
           padding: EdgeInsets.only(top: 55),
           child: FutureBuilder<QuerySnapshot>(
-            future: Firestore.instance.collection("armarios").getDocuments(),
+            future: Firestore.instance.collection("lockers").getDocuments(),
             builder: (context, snapshot) {
               if (!snapshot.hasData)
                 return Center(
@@ -47,7 +47,7 @@ class HomeTab extends StatelessWidget {
                         tiles: snapshot.data.documents.map((doc) {
                           return LockerTile(doc);
                         }).toList(),
-                        color: Colors.grey[500])
+                        color: Colors.grey)
                     .toList();
                 return ListView(
                   children: dividedTiles,
