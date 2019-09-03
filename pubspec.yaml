@@ -45,6 +45,7 @@ dependencies:
   crypto: ^2.1.2
   qr_flutter: ^3.0.1
   entity: ^1.5.0
+  rflutter_alert: ^1.0.2
 
 
 dev_dependencies:

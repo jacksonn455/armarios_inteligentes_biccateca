@@ -11,6 +11,7 @@ import 'package:http/http.dart' as http;
 import 'dart:async';
 import 'dart:convert';
 import 'package:crypto/crypto.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
 
 class LockerScreen extends StatefulWidget {
   @override
@@ -214,110 +215,85 @@ class LockerScreenState extends State<LockerScreen> {
 
 enum ConfirmAction { CANCEL, ACCEPT }
 
+// ignore: missing_return
 Future<ConfirmAction> _asyncPortaUm(BuildContext context) async {
-  return showDialog<ConfirmAction>(
+  Alert(
     context: context,
-    barrierDismissible: false, // user must tap button for close dialog!
-    builder: (BuildContext context) {
-      return AlertDialog(
-        title: Text(
-          'Confirmar',
-          textAlign: TextAlign.justify,
+    type: AlertType.warning,
+    title: "Tem certeza que deseja abrir a porta 1 ?",
+    buttons: [
+      DialogButton(
+        child: Text(
+          "Sim",
+          style: TextStyle(color: Colors.white, fontSize: 20),
         ),
-        content: const Text(
-          'Tem certeza que deseja abrir a porta 1 ?',
-          textAlign: TextAlign.justify,
+        onPressed: () async{
+          consumo.abrirportaUm();
+          await Future.delayed(Duration(seconds: 3));
+          await Confirmacao(context);
+        },
+        color: Colors.lightBlueAccent,
+      ),
+      DialogButton(
+        child: Text(
+          "Não",
+          style: TextStyle(color: Colors.white, fontSize: 20),
         ),
-        actions: <Widget>[
-          FlatButton(
-            child: const Text(
-              'Sim',
-              textAlign: TextAlign.justify,
-            ),
-            onPressed: () async{
-              consumo.abrirportaUm();
-              await Future.delayed(Duration(seconds: 3));
-              await Confirmacao(context);
-            },
-          ),
-          FlatButton(
-            child: const Text(
-              'Não',
-              textAlign: TextAlign.justify,
-            ),
-            onPressed: () {
-              Navigator.of(context).pop(ConfirmAction.CANCEL);
-            },
-          ),
-        ],
-      );
-    },
-  );
+        onPressed: () => Navigator.pop(context),
+        color: Colors.lightBlueAccent,
+      )
+    ],
+  ).show();
 }
 
+// ignore: missing_return
 Future<ConfirmAction> _asyncPortaDois(BuildContext context) async {
-  return showDialog<ConfirmAction>(
+  Alert(
     context: context,
-    barrierDismissible: false, // user must tap button for close dialog!
-    builder: (BuildContext context) {
-      return AlertDialog(
-        title: Text(
-          'Confirmar',
-          textAlign: TextAlign.justify,
+    type: AlertType.warning,
+    title: "Tem certeza que deseja abrir a porta 2 ?",
+    buttons: [
+      DialogButton(
+        child: Text(
+          "Sim",
+          style: TextStyle(color: Colors.white, fontSize: 20),
         ),
-        content: Text(
-          'Tem certeza que deseja abrir a porta 2 ?',
-          textAlign: TextAlign.justify,
+        onPressed: () async{
+          consumo.abrirportaDois();
+          await Future.delayed(Duration(seconds: 3));
+          await Confirmacao(context);
+        },
+        color: Colors.lightBlueAccent,
+      ),
+      DialogButton(
+        child: Text(
+          "Não",
+          style: TextStyle(color: Colors.white, fontSize: 20),
         ),
-        actions: <Widget>[
-          FlatButton(
-            child: const Text(
-              'Sim',
-              textAlign: TextAlign.justify,
-            ),
-            onPressed: () async {
-              consumo.abrirportaDois();
-              await Future.delayed(Duration(seconds: 3));
-              await Confirmacao(context);
-            },
-          ),
-          FlatButton(
-            child: const Text(
-              'Não',
-              textAlign: TextAlign.center,
-            ),
-            onPressed: () {
-              Navigator.of(context).pop(ConfirmAction.CANCEL);
-            },
-          ),
-        ],
-      );
-    },
-  );
+        onPressed: () => Navigator.pop(context),
+        color: Colors.lightBlueAccent,
+      )
+    ],
+  ).show();
 }
 
 Future Confirmacao(BuildContext context) async {
-  // configura o button
-  Widget okButton = FlatButton(
-    child: Text("OK"),
-    onPressed: () {
-      Navigator.of(context).pop();
-    },
-  );
-  // configura o  AlertDialog
-  AlertDialog alerta = AlertDialog(
-    title: Text(await teste()),
-    actions: [
-      okButton,
-    ],
-  );
-  // exibe o dialog
-  showDialog(
+  Alert(
     context: context,
-    builder: (BuildContext context) {
-      return alerta;
-    },
-  );
+    type: AlertType.info,
+    title: await teste(),
+    buttons: [
+      DialogButton(
+        child: Text(
+          "OK",
+          style: TextStyle(color: Colors.white, fontSize: 20),
+        ),
+        onPressed: () => Navigator.pop(context),
+        color: Colors.lightBlueAccent,
+        width: 120,
+      )
+    ],
+  ).show();
 }
 
 Future teste(){

@@ -5,6 +5,7 @@ import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:scoped_model/scoped_model.dart';
 import 'home_screen.dart';
 import 'package:mysql1/mysql1.dart';
@@ -111,7 +112,7 @@ class QrScanState extends State<QrScan> {
 
     final List<DocumentSnapshot> documents = result.documents;
     if (documents.length == 1) {
-      confirmacao(context);
+      Duplicado(context);
     } else {
       await Firestore.instance
           .collection("lockers")
@@ -147,27 +148,21 @@ class QrScanState extends State<QrScan> {
   }
 }
 
-confirmacao(BuildContext context) {
-  // configura o button
-  Widget okButton = FlatButton(
-    child: Text("OK"),
-    onPressed: () {
-      Navigator.of(context)
-          .pushReplacement(MaterialPageRoute(builder: (context) => HomeScreen()));
-      },
-  );
-  // configura o  AlertDialog
-  AlertDialog alerta = AlertDialog(
-    title: Text("QR Code já cadastrado"),
-    actions: [
-      okButton,
-    ],
-  );
-  // exibe o dialog
-  showDialog(
+  Duplicado(BuildContext context){
+  Alert(
     context: context,
-    builder: (BuildContext context) {
-      return alerta;
-    },
-  );
+    type: AlertType.error,
+    title: "QR Code já cadastrado",
+    buttons: [
+      DialogButton(
+        child: Text(
+          "OK",
+          style: TextStyle(color: Colors.white, fontSize: 20),
+        ),
+        onPressed: () => Navigator.pop(context),
+        color: Colors.lightBlueAccent,
+        width: 120,
+      )
+    ],
+  ).show();
 }

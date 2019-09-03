@@ -2,6 +2,7 @@ import 'package:armarios_inteligentes/screens/locker_screen.dart';
 import 'package:armarios_inteligentes/screens/qrcode_screen.dart';
 import 'package:armarios_inteligentes/screens/routines_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
 
 class OptionScreen extends StatelessWidget {
   @override
@@ -93,191 +94,142 @@ class OptionScreen extends StatelessWidget {
 enum ConfirmAction { CANCEL, ACCEPT }
 
 Future<ConfirmAction> _asyncConfirmDialog(BuildContext context) async {
-  return showDialog<ConfirmAction>(
+  Alert(
     context: context,
-    barrierDismissible: false, // user must tap button for close dialog!
-    builder: (BuildContext context) {
-      return AlertDialog(
-        title: Text(
-          'Confirmar',
-          textAlign: TextAlign.justify,
+    type: AlertType.warning,
+    title: "Tem certeza que deseja dar padrão de fábrica ?",
+    buttons: [
+      DialogButton(
+        child: Text(
+          "Sim",
+          style: TextStyle(color: Colors.white, fontSize: 20),
         ),
-        content: const Text(
-          'Tem certeza que deseja dar padrão de fábrica ?',
-          textAlign: TextAlign.justify,
+        onPressed: () async{
+          consumo.abrirTodasAsPortas();
+          await Future.delayed(Duration(seconds: 3));
+          await Confirmacao(context);
+        },
+        color: Colors.lightBlueAccent,
+      ),
+      DialogButton(
+        child: Text(
+          "Não",
+          style: TextStyle(color: Colors.white, fontSize: 20),
         ),
-        actions: <Widget>[
-          FlatButton(
-            child: const Text(
-              'Sim',
-              textAlign: TextAlign.justify,
-            ),
-            onPressed: () async {
-              consumo.padraoDeFabrica();
-              await Future.delayed(Duration(seconds: 4));
-              await Confirmacao(context);
-            },
-          ),
-          FlatButton(
-            child: const Text(
-              'Não',
-              textAlign: TextAlign.justify,
-            ),
-            onPressed: () {
-              Navigator.of(context).pop(ConfirmAction.CANCEL);
-            },
-          ),
-        ],
-      );
-    },
-  );
+        onPressed: () => Navigator.pop(context),
+        color: Colors.lightBlueAccent,
+      )
+    ],
+  ).show();
 }
 
 Future<ConfirmAction> _reiniciar(BuildContext context) async {
-  return showDialog<ConfirmAction>(
+  Alert(
     context: context,
-    barrierDismissible: false, // user must tap button for close dialog!
-    builder: (BuildContext context) {
-      return AlertDialog(
-        title: Text(
-          'Confirmar',
-          textAlign: TextAlign.justify,
+    type: AlertType.warning,
+    title: "Tem certeza que deseja reiniciar ?",
+    buttons: [
+      DialogButton(
+        child: Text(
+          "Sim",
+          style: TextStyle(color: Colors.white, fontSize: 20),
         ),
-        content: const Text(
-          'Tem certeza que deseja dar reiniciar o dispositivo?',
-          textAlign: TextAlign.justify,
+        onPressed: () async{
+          consumo.abrirTodasAsPortas();
+          await Future.delayed(Duration(seconds: 3));
+          await Confirmacao(context);
+        },
+        color: Colors.lightBlueAccent,
+      ),
+      DialogButton(
+        child: Text(
+          "Não",
+          style: TextStyle(color: Colors.white, fontSize: 20),
         ),
-        actions: <Widget>[
-          FlatButton(
-            child: const Text(
-              'Sim',
-              textAlign: TextAlign.justify,
-            ),
-            onPressed: () async {
-              consumo.reiniciar();
-              await Future.delayed(Duration(seconds: 3));
-              await Confirmacao(context);
-            },
-          ),
-          FlatButton(
-            child: const Text(
-              'Não',
-              textAlign: TextAlign.justify,
-            ),
-            onPressed: () {
-              Navigator.of(context).pop(ConfirmAction.CANCEL);
-            },
-          ),
-        ],
-      );
-    },
-  );
+        onPressed: () => Navigator.pop(context),
+        color: Colors.lightBlueAccent,
+      )
+    ],
+  ).show();
 }
 
 Future<ConfirmAction> _reconfig(BuildContext context) async {
-  return showDialog<ConfirmAction>(
+  Alert(
     context: context,
-    barrierDismissible: false, // user must tap button for close dialog!
-    builder: (BuildContext context) {
-      return AlertDialog(
-        title: Text(
-          'Confirmar',
-          textAlign: TextAlign.justify,
+    type: AlertType.warning,
+    title: "Tem certeza que deseja reconfigurar os módulos ?",
+    buttons: [
+      DialogButton(
+        child: Text(
+          "Sim",
+          style: TextStyle(color: Colors.white, fontSize: 20),
         ),
-        content: const Text(
-          'Tem certeza que deseja reconfigurar os módulos ?',
-          textAlign: TextAlign.justify,
+        onPressed: () async{
+          consumo.reconfigurar();
+          await Future.delayed(Duration(seconds: 3));
+          await Confirmacao(context);
+        },
+        color: Colors.lightBlueAccent,
+      ),
+      DialogButton(
+        child: Text(
+          "Não",
+          style: TextStyle(color: Colors.white, fontSize: 20),
         ),
-        actions: <Widget>[
-          FlatButton(
-            child: const Text(
-              'Sim',
-              textAlign: TextAlign.justify,
-            ),
-            onPressed: () async {
-              consumo.reconfigurar();
-              await Future.delayed(Duration(seconds: 3));
-              await Confirmacao(context);
-            },
-          ),
-          FlatButton(
-            child: const Text(
-              'Não',
-              textAlign: TextAlign.justify,
-            ),
-            onPressed: () {
-              Navigator.of(context).pop(ConfirmAction.CANCEL);
-            },
-          ),
-        ],
-      );
-    },
-  );
+        onPressed: () => Navigator.pop(context),
+        color: Colors.lightBlueAccent,
+      )
+    ],
+  ).show();
 }
 
 Future<ConfirmAction> _atualizar(BuildContext context) async {
-  return showDialog<ConfirmAction>(
+  Alert(
     context: context,
-    barrierDismissible: false, // user must tap button for close dialog!
-    builder: (BuildContext context) {
-      return AlertDialog(
-        title: Text(
-          'Confirmar',
-          textAlign: TextAlign.justify,
+    type: AlertType.warning,
+    title: "Tem certeza que deseja atualizar ?",
+    buttons: [
+      DialogButton(
+        child: Text(
+          "Sim",
+          style: TextStyle(color: Colors.white, fontSize: 20),
         ),
-        content: const Text(
-          'Tem certeza que deseja atualizar o dispositivo ?',
-          textAlign: TextAlign.justify,
+        onPressed: () async{
+          consumo.atualizar();
+          await Future.delayed(Duration(seconds: 3));
+          await Confirmacao(context);
+        },
+        color: Colors.lightBlueAccent,
+      ),
+      DialogButton(
+        child: Text(
+          "Não",
+          style: TextStyle(color: Colors.white, fontSize: 20),
         ),
-        actions: <Widget>[
-          FlatButton(
-            child: const Text(
-              'Sim',
-              textAlign: TextAlign.justify,
-            ),
-            onPressed: () async {
-              consumo.atualizar();
-              await Future.delayed(Duration(seconds: 3));
-              await Confirmacao(context);
-            },
-          ),
-          FlatButton(
-            child: const Text(
-              'Não',
-              textAlign: TextAlign.justify,
-            ),
-            onPressed: () {
-              Navigator.of(context).pop(ConfirmAction.CANCEL);
-            },
-          ),
-        ],
-      );
-    },
-  );
+        onPressed: () => Navigator.pop(context),
+        color: Colors.lightBlueAccent,
+      )
+    ],
+  ).show();
 }
 
 Future Confirmacao(BuildContext context) async {
-  // configura o button
-  Widget okButton = FlatButton(
-    child: Text("OK"),
-    onPressed: () {
-      Navigator.of(context).pop();
-    },
-  );
-  // configura o  AlertDialog
-  AlertDialog alerta = AlertDialog(
-    title: Text(await teste()),
-    actions: [
-      okButton,
-    ],
-  );
-  // exibe o dialog
-  showDialog(
+  Alert(
     context: context,
-    builder: (BuildContext context) {
-      return alerta;
-    },
-  );
+    type: AlertType.info,
+    title: await teste(),
+    buttons: [
+      DialogButton(
+        child: Text(
+          "OK",
+          style: TextStyle(color: Colors.white, fontSize: 20),
+        ),
+        onPressed: () => Navigator.pop(context),
+        color: Colors.lightBlueAccent,
+        width: 120,
+      )
+    ],
+  ).show();
 }
 
 Future teste() {

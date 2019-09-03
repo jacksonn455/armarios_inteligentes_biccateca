@@ -2,6 +2,7 @@ import 'package:armarios_inteligentes/screens/locker_screen.dart';
 import 'package:armarios_inteligentes/screens/report_screen.dart';
 import 'package:armarios_inteligentes/screens/routines_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
 
 class AboutScreen extends StatelessWidget {
   @override
@@ -146,51 +147,41 @@ class AboutScreen extends StatelessWidget {
 }
 
 Future Confirmacao(BuildContext context) async {
-  // configura o button
-  Widget okButton = FlatButton(
-    child: Text("OK"),
-    onPressed: () {
-      Navigator.of(context).pop();
-    },
-  );
-  // configura o  AlertDialog
-  AlertDialog alerta = AlertDialog(
-    title: Text(await teste()),
-    actions: [
-      okButton,
-    ],
-  );
-  // exibe o dialog
-  showDialog(
+  Alert(
     context: context,
-    builder: (BuildContext context) {
-      return alerta;
-    },
-  );
+    type: AlertType.info,
+    title: await teste(),
+    buttons: [
+      DialogButton(
+        child: Text(
+          "OK",
+          style: TextStyle(color: Colors.white, fontSize: 20),
+        ),
+        onPressed: () => Navigator.pop(context),
+        color: Colors.lightBlueAccent,
+        width: 120,
+      )
+    ],
+  ).show();
 }
 
 Future ConfirmacaoUm(BuildContext context) async {
-  // configura o button
-  Widget okButton = FlatButton(
-    child: Text("OK"),
-    onPressed: () {
-      Navigator.of(context).pop();
-    },
-  );
-  // configura o  AlertDialog
-  AlertDialog alerta = AlertDialog(
-    title: Text(await testeUm()),
-    actions: [
-      okButton,
-    ],
-  );
-  // exibe o dialog
-  showDialog(
+  Alert(
     context: context,
-    builder: (BuildContext context) {
-      return alerta;
-    },
-  );
+    type: AlertType.info,
+    title: await testeUm(),
+    buttons: [
+      DialogButton(
+        child: Text(
+          "OK",
+          style: TextStyle(color: Colors.white, fontSize: 20),
+        ),
+        onPressed: () => Navigator.pop(context),
+        color: Colors.lightBlueAccent,
+        width: 120,
+      )
+    ],
+  ).show();
 }
 
 Future teste(){
