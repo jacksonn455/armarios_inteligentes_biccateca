@@ -6,6 +6,7 @@ import 'package:armarios_inteligentes/screens/report_screen.dart';
 import 'package:armarios_inteligentes/screens/routines_screen.dart';
 import 'package:armarios_inteligentes/widgets/request.dart';
 import 'package:armarios_inteligentes/widgets/tempoStamp.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:async';

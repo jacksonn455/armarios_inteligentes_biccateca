@@ -1,3 +1,4 @@
+import 'package:armarios_inteligentes/models/user_model.dart';
 import 'package:armarios_inteligentes/screens/locker_screen.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
@@ -11,7 +12,11 @@ class LockerTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    String uid = UserModel.of(context).firebaseUser.uid;
+
+
     return ListTile(
+     //
       title: Text(snapshot.data["numero_serie"], textAlign: TextAlign.justify, style: TextStyle(fontSize: 13.0),),
       subtitle: Text('Guarda Volume'),
       trailing: Column(
@@ -27,6 +32,6 @@ class LockerTile extends StatelessWidget {
       },
     );
   }
-}
 
+}
 

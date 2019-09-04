@@ -105,7 +105,7 @@ Future<ConfirmAction> _asyncConfirmDialog(BuildContext context) async {
           style: TextStyle(color: Colors.white, fontSize: 20),
         ),
         onPressed: () async{
-          consumo.abrirTodasAsPortas();
+          consumo.padraoDeFabrica();
           await Future.delayed(Duration(seconds: 3));
           await Confirmacao(context);
         },
@@ -135,7 +135,7 @@ Future<ConfirmAction> _reiniciar(BuildContext context) async {
           style: TextStyle(color: Colors.white, fontSize: 20),
         ),
         onPressed: () async{
-          consumo.abrirTodasAsPortas();
+          consumo.reiniciar();
           await Future.delayed(Duration(seconds: 3));
           await Confirmacao(context);
         },

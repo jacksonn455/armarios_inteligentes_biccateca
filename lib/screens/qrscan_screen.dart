@@ -22,7 +22,7 @@ class QrScanState extends State<QrScan> {
   String error = "";
   String nome = "";
   String _numeroSerie = "";
-  String _id = "91";
+
 
   QrScanState();
 
@@ -99,25 +99,27 @@ class QrScanState extends State<QrScan> {
   }
 
   void SalvarMensagem() async {
-    // select id_armarios from armarios where numero_serie = '$_numeroSerie'
+
+   String uid = UserModel.of(context).firebaseUser.uid;
+   print(uid);
 
     this._status = _status;
     _numeroSerie = _status.substring(48, 80);
 
     final QuerySnapshot result = await Future.value(Firestore.instance
         .collection("lockers")
-        .where("numero_serie", isEqualTo: "$_numeroSerie")
-        .limit(1)
+        .where("userid", isEqualTo: "$uid")
+        .where("numero_serie", isEqualTo: "$_numeroSerie").limit(1)
         .getDocuments());
 
     final List<DocumentSnapshot> documents = result.documents;
     if (documents.length == 1) {
-      Duplicado(context);
+     print("duplicado");
     } else {
       await Firestore.instance
           .collection("lockers")
           .document()
-          .setData({"numero_serie": _numeroSerie});
+          .setData({"numero_serie": _numeroSerie, "userid": uid});
     }
   }
 
@@ -148,7 +150,7 @@ class QrScanState extends State<QrScan> {
   }
 }
 
-  Duplicado(BuildContext context){
+  duplicado(BuildContext context){
   Alert(
     context: context,
     type: AlertType.error,
@@ -166,3 +168,5 @@ class QrScanState extends State<QrScan> {
     ],
   ).show();
 }
+
+// Estou tentando aplicar um alerta de dialogo toda vez que o item for duplicado mas quando eu faço o teste ele acaba dando este erro, alguem tem alguma dica de como arrumar isso ?
