@@ -9,8 +9,9 @@ class PlacesTab extends StatelessWidget {
   @override
 
   Widget build(BuildContext context) {
+    String uid = UserModel.of(context).firebaseUser.uid;
     return FutureBuilder<QuerySnapshot>(
-      future: Firestore.instance.collection("lockers").getDocuments(),
+      future: Firestore.instance.collection("lockers").where("userid", isEqualTo: "$uid").getDocuments(),
       builder: (context, snapshot) {
         if (!snapshot.hasData)
           return Center(
