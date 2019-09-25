@@ -48,7 +48,7 @@ Aplicativo em desenvolvimento para utilizar armários inteligentes
 
  Tela Relatórios
  
- ![](https://github.com/jacksonn455/armarios_inteligentes_biccateca/blob/master/relatorio.png)
+ ![](https://github.com/jacksonn455/armarios_inteligentes_biccateca/blob/master/relatorio%20de%20ocupa%C3%A7%C3%A3o.png)
 --------------------
 
  Tela de Sobre ( Dispositivo )
