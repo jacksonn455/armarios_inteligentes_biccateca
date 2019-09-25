@@ -53,7 +53,7 @@ Aplicativo em desenvolvimento para utilizar armários inteligentes
 
  Tela de Sobre ( Dispositivo )
  
- ![](https://github.com/jacksonn455/armarios_inteligentes_biccateca/blob/master/Sobre%20(%20dispositivo%20).png)
+ ![](https://github.com/jacksonn455/armarios_inteligentes_biccateca/blob/master/sobre.png)
 --------------------
 
  Tela de Configuração
