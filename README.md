@@ -14,7 +14,7 @@ Aplicativo em desenvolvimento para utilizar armários inteligentes
  
  Tela de Splash
  
- ![](https://github.com/jacksonn455/armarios_inteligentes_biccateca/blob/master/Splash.png)
+ ![](https://github.com/jacksonn455/armarios_inteligentes_biccateca/blob/master/splash.png)
 --------------------
  Tela de Login
  
