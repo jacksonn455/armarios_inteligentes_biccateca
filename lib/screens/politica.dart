@@ -5,9 +5,9 @@ class PoliticaScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: ListView(
+    return Stack(
+      children: <Widget>[
+      ListView(
         padding: EdgeInsets.all(8.0),
         children: <Widget>[
           SizedBox(
@@ -27,6 +27,6 @@ class PoliticaScreen extends StatelessWidget {
           Divider(),
         ],
       ),
-    );
+    ]);
   }
 }

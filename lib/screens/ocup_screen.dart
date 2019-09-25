@@ -19,6 +19,13 @@ class OcupScreen extends StatelessWidget {
               .pushReplacement(MaterialPageRoute(builder: (context) => RoutinesScreen())),
         ),
       ),
-    );
+      body: Stack(
+        children: <Widget>[
+      Image.asset(
+      "images/wall5.png",
+        fit: BoxFit.cover,
+        height: 1000,
+      ),
+    ]));
   }
 }

@@ -36,7 +36,7 @@ class _SplashState extends State<Splash> {
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("images/splash.jpg"),
+            image: AssetImage("images/splashs4.png"),
             fit: BoxFit.cover,
           ),
         ),
@@ -47,7 +47,7 @@ class _SplashState extends State<Splash> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(Duration(milliseconds: 1500)).then((_) {
+    Future.delayed(Duration(milliseconds: 1700)).then((_) {
       if (UserModel.of(context).isLoggedIn()) {
         Navigator.of(context).pushReplacement(
             MaterialPageRoute(builder: (context) => HomeScreen()));

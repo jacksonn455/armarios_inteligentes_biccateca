@@ -114,7 +114,7 @@ class QrScanState extends State<QrScan> {
 
     final List<DocumentSnapshot> documents = result.documents;
     if (documents.length == 1) {
-     print("duplicado");
+      duplicado(context);
     } else {
       await Firestore.instance
           .collection("lockers")
@@ -122,8 +122,23 @@ class QrScanState extends State<QrScan> {
           .setData({"numero_serie": _numeroSerie, "userid": uid});
     }
   }
+   MostrarMensagem() async {
+    String uid = UserModel
+        .of(context)
+        .firebaseUser
+        .uid;
+    print(uid);
 
-  void telaInicial() {
+
+    final QuerySnapshot result = await Future.value(Firestore.instance
+        .collection("lockers")
+        .where("userid", isEqualTo: "$uid")
+        .getDocuments());
+    return result.toString();
+  }
+
+
+    void telaInicial() {
     Navigator.of(context)
         .pushReplacement(MaterialPageRoute(builder: (context) => HomeScreen()));
   }
@@ -168,5 +183,3 @@ class QrScanState extends State<QrScan> {
     ],
   ).show();
 }
-
-// Estou tentando aplicar um alerta de dialogo toda vez que o item for duplicado mas quando eu faço o teste ele acaba dando este erro, alguem tem alguma dica de como arrumar isso ?

@@ -8,7 +8,6 @@ class AboutScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: new AppBar(
         backgroundColor: Colors.lightBlueAccent,
         title: Text('Sobre'),
@@ -19,7 +18,14 @@ class AboutScreen extends StatelessWidget {
               MaterialPageRoute(builder: (context) => LockerScreen())),
         ),
       ),
-      body: ListView(
+      body: Stack(
+        children: <Widget>[
+      Image.asset(
+      "images/wall5.png",
+        fit: BoxFit.cover,
+        height: 1000,
+      ),
+      ListView(
         padding: EdgeInsets.all(10.0),
         children: <Widget>[
           ListTile(
@@ -142,7 +148,7 @@ class AboutScreen extends StatelessWidget {
           ),
         ],
       ),
-    );
+    ]));
   }
 }
 

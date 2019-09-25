@@ -19,7 +19,14 @@ class OptionScreen extends StatelessWidget {
               MaterialPageRoute(builder: (context) => LockerScreen())),
         ),
       ),
-      body: ListView(
+      body: Stack(
+        children: <Widget>[
+      Image.asset(
+      "images/wall5.png",
+        fit: BoxFit.cover,
+        height: 1000,
+      ),
+      ListView(
         padding: EdgeInsets.all(8.0),
         children: <Widget>[
           SizedBox(
@@ -87,7 +94,7 @@ class OptionScreen extends StatelessWidget {
           Divider(),
         ],
       ),
-    );
+    ]));
   }
 }
 

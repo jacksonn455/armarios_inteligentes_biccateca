@@ -12,7 +12,6 @@ class LockerTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return ListTile(
       title: Text(snapshot.data["numero_serie"], textAlign: TextAlign.justify, style: TextStyle(fontSize: 13.0),),
       subtitle: Text('Guarda Volume'),

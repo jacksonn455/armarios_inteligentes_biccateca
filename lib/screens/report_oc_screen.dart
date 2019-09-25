@@ -18,6 +18,13 @@ class ReportOcScreen extends StatelessWidget {
               .pushReplacement(MaterialPageRoute(builder: (context) => ReportScreen())),
         ),
       ),
-    );
+      body: Stack(
+        children: <Widget>[
+      Image.asset(
+      "images/wall5.png",
+        fit: BoxFit.cover,
+        height: 1000,
+      ),
+    ]));
   }
 }

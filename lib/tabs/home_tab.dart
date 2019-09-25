@@ -1,3 +1,4 @@
+import 'package:armarios_inteligentes/models/user_model.dart';
 import 'package:armarios_inteligentes/screens/qrscan_screen.dart';
 import 'package:armarios_inteligentes/tiles/locker_tile.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -7,6 +8,7 @@ class HomeTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    String uid = UserModel.of(context).firebaseUser.uid;
     return Stack(
       children: <Widget>[
         CustomScrollView(
@@ -36,7 +38,7 @@ class HomeTab extends StatelessWidget {
         Container(
           padding: EdgeInsets.only(top: 55),
           child: FutureBuilder<QuerySnapshot>(
-            future: Firestore.instance.collection("lockers").getDocuments(),
+            future: Firestore.instance.collection("lockers").where("userid", isEqualTo: "$uid").getDocuments(),
             builder: (context, snapshot) {
               if (!snapshot.hasData)
                 return Center(
