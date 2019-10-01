@@ -16,9 +16,9 @@ Aplicativo em desenvolvimento para utilizar armários inteligentes
  
  ![](https://github.com/jacksonn455/armarios_inteligentes_biccateca/blob/master/splash.png)
 --------------------
- Tela de Login
+ Tela de Login por Senha e TouchID (FireBase)
  
- ![](https://github.com/jacksonn455/armarios_inteligentes_biccateca/blob/master/login2.png)
+ ![](https://github.com/jacksonn455/armarios_inteligentes_biccateca/blob/master/login3.png)
 --------------------
  
   Tela de Cadastro
