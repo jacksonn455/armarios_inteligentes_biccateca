@@ -36,6 +36,16 @@ Aplicativo em desenvolvimento para utilizar armários inteligentes
  ![](https://github.com/jacksonn455/armarios_inteligentes_biccateca/blob/master/homeTab.png)
 --------------------
 
+ Push Notification
+ 
+ ![](https://github.com/jacksonn455/armarios_inteligentes_biccateca/blob/master/push%20notification%20(1).png)
+--------------------
+
+ Push Notification
+ 
+ ![](https://github.com/jacksonn455/armarios_inteligentes_biccateca/blob/master/push%20notification%20(2).png)
+--------------------
+
  Tela Armário
  
  ![](https://github.com/jacksonn455/armarios_inteligentes_biccateca/blob/master/armarioo.png)
