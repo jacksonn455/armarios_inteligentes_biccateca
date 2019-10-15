@@ -1,6 +1,6 @@
 *Armários Inteligentes*
 
-Aplicativo em desenvolvimento para utilizar armários inteligentes
+Aplicativo  desenvolvido para utilizar armários inteligentes
 
 - Vídeo:
 
