@@ -3,6 +3,11 @@ Armários Inteligentes
 
 Aplicativo em desenvolvimento para utilizar armários inteligentes
 
+Demo:
+
+![](http://damien.pobel.fr/images/youtube-video-github.gif)
+
+See also [Embed a Youtube video in Github markdown](http://damien.pobel.fr/post/youtube-video-github/)
  --------------------
  
  Tela do icone
