@@ -4,6 +4,7 @@ Armários Inteligentes
 Aplicativo em desenvolvimento para utilizar armários inteligentes
 
 Vídeo:
+
 [![Armario Conectado](https://img.youtube.com/vi/LkR5iQRJqto/0.jpg)](https://www.youtube.com/watch?v=WX_j9xHu5Zo&t=1s "Vídeo demonstrativo do aplicativo")
  --------------------
  
