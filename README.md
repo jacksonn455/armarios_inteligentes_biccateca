@@ -1,8 +1,6 @@
 Armários Inteligentes
 ===============================================
 
---------------------
-
 Aplicativo em desenvolvimento para utilizar armários inteligentes
 
  --------------------
@@ -30,6 +28,8 @@ Aplicativo em desenvolvimento para utilizar armários inteligentes
  
  ![](https://github.com/jacksonn455/armarios_inteligentes_biccateca/blob/master/confirma%C3%A7%C3%A3o%20cadastro.png)
 --------------------
+
+ ![](https://github.com/jacksonn455/armarios_inteligentes_biccateca/blob/master/conectado.mp4)
 
  Tela Home
  
@@ -109,4 +109,5 @@ Aplicativo em desenvolvimento para utilizar armários inteligentes
  Tela de Scan
  
  ![](https://github.com/jacksonn455/armarios_inteligentes_biccateca/blob/master/qr%20codee.png)
---------------------
+===============================================
+
