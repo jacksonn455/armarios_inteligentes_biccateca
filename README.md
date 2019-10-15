@@ -3,7 +3,7 @@ Armários Inteligentes
 
 Aplicativo em desenvolvimento para utilizar armários inteligentes
 
- ![](https://www.youtube.com/watch?v=WX_j9xHu5Zo&feature=youtu.be)
+ <iframe width="560" height="315" src="https://www.youtube.com/embed/WX_j9xHu5Zo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
  --------------------
  
  Tela do icone
