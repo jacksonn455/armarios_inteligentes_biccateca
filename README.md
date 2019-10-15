@@ -3,7 +3,8 @@ Armários Inteligentes
 
 Aplicativo em desenvolvimento para utilizar armários inteligentes
 
-[![Everything Is AWESOME](https://img.youtube.com/vi/StTqXEQ2l-Y/0.jpg)](https://www.youtube.com/watch?v=WX_j9xHu5Zo&t=1s "Everything Is AWESOME")
+Vídeo:
+[![Armario Conectado](https://img.youtube.com/vi/LkR5iQRJqto/0.jpg)](https://www.youtube.com/watch?v=WX_j9xHu5Zo&t=1s "Vídeo demonstrativo do aplicativo")
  --------------------
  
  Tela do icone
