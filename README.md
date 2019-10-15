@@ -3,7 +3,7 @@ Armários Inteligentes
 
 Aplicativo em desenvolvimento para utilizar armários inteligentes
 
-[![Alt text](https://img.youtube.com/vi/VID/0.jpg)](https://www.youtube.com/watch?v=VID)
+[![https://armariosinteligentes.com.br/admin/web_files/uploads//produtos/1f77f26bcbb772aab2863558d317475e.png](http://img.youtube.com/vi/WX_j9xHu5Zo/0.jpg)](http://www.youtube.com/watch?v=WX_j9xHu5Zo "https://armariosinteligentes.com.br/admin/web_files/uploads//produtos/1f77f26bcbb772aab2863558d317475e.png")
  --------------------
  
  Tela do icone
