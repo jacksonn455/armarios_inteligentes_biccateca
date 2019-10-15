@@ -1,4 +1,4 @@
-Armários Inteligentes
+*Armários Inteligentes*
 
 Aplicativo em desenvolvimento para utilizar armários inteligentes
 
