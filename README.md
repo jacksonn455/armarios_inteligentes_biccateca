@@ -3,7 +3,7 @@ Armários Inteligentes
 
 Aplicativo em desenvolvimento para utilizar armários inteligentes
 
-![Gravity](https://player.vimeo.com/video/125471012)
+![Gravity](https://youtu.be/WX_j9xHu5Zo)
  --------------------
  
  Tela do icone
