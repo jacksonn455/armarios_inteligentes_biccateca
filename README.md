@@ -3,7 +3,7 @@ Armários Inteligentes
 
 Aplicativo em desenvolvimento para utilizar armários inteligentes
 
-[![https://media-exp1.licdn.com/media-proxy/ext?w=800&h=800&f=n&hash=M%2B%2BnUm5qTH0IaXfW6%2FXtrTcq%2BzU%3D&ora=1%2CaFBCTXdkRmpGL2lvQUFBPQ%2CxAVta9Er0Vinkhwfjw8177yE41y87UNCVordEGXyD3u0qYrdfyPrKsHYL-bzuVwVLisclFVge_KgRjjnD5a0KoznLN902ZS0Io27dA4BYBI3iSdF_NQ8](http://img.youtube.com/vi/WX_j9xHu5Zo/0.jpg)](http://www.youtube.com/watch?v=WX_j9xHu5Zo "https://media-exp1.licdn.com/media-proxy/ext?w=800&h=800&f=n&hash=7XQ%2FQ%2FWRe%2Fr0Ov8hByjATIpoyKU%3D&ora=1%2CaFBCTXdkRmpGL2lvQUFBPQ%2CxAVta9Er0Vinkhwfjw8177yE41y87UNCVordEGXyD3u0qYrdf3Pre86KfrqluQ8fKX8clAc0LvKgRzLiD8C9KYi-eo4n3sTsdY27dA4BYBI3iSdF_NQ8")
+[![Everything Is AWESOME](https://img.youtube.com/vi/StTqXEQ2l-Y/0.jpg)](https://www.youtube.com/watch?v=StTqXEQ2l-Y "Everything Is AWESOME")
  --------------------
  
  Tela do icone
